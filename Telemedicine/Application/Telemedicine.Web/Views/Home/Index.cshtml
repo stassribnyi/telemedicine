@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-controller="DashboardController" data-ng-cloak>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 data-ng-bind="title"></h1>
+            <table class="table table-striped table-bordered">
+                <thead class="table-header-inverse">
+                    <tr>
+                        <th class="text-center">INN</th>
+                        <th class="text-center">Firstname</th>
+                        <th class="text-center">Lastname</th>
+                        <th class="text-center">Birth</th>
+                        <th class="text-center">View information</th>
+                        <th class="text-center">View analyzes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="patient in patients | start: (currentPage - 1) * itemPerPage | limitTo: itemPerPage">
+                        <td data-ng-bind="patient.inn" class="text-center"></td>
+                        <td data-ng-bind="patient.firstName" class="text-center"></td>
+                        <td data-ng-bind="patient.lastName" class="text-center"></td>
+                        <td class="text-center">{{patient.birth | dateParse | date:"mediumDate"}}</td>
+                        <td data-ng-click="showPatient(patient.id)" class="text-center cursor-pointer">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </td>
+                        <td data-ng-click="showPatientAnalyzes(patient.id)" class="text-center cursor-pointer">
+                            <span class="glyphicon glyphicon-stats"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <uib-pagination boundary-links="true"
+                                total-items="patients.length"
+                                items-per-page="itemPerPage"
+                                ng-model="currentPage"
+                                max-size="20"
+                                class="pagination-sm custom-pagination"
+                                previous-text="&lsaquo;"
+                                next-text="&rsaquo;"
+                                first-text="&laquo;"
+                                last-text="&raquo;"></uib-pagination>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

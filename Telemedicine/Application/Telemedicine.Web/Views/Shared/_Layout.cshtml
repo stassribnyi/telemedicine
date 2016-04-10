@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html data-ng-app="app" class="ng-cloak">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+</head>
+<body role="document">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><span class="telemedicine-logo pull-left"></span><span class="pull-left">Telemedicine</span></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse pull-right">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="/Patient/New"><span class="glyphicon glyphicon-plus margin-right-5"></span><span>New Patient</span></a></li>
+                    <li><a href="/"><span class="glyphicon glyphicon-th-list margin-right-5"></span><span>Patients</span></a></li>
+                    <li><a href="/"><span class="glyphicon glyphicon-user margin-right-5"></span><span>Anton Lermontov</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container telemedicine-container" role="main">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/moment")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/ui-angular")
+    @Scripts.Render("~/bundles/highcharts")
+    @Scripts.Render("~/bundles/grid-light")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/filters")
+    @Scripts.Render("~/bundles/constants")
+    @Scripts.Render("~/bundles/factories")
+    @Scripts.Render("~/bundles/directives")
+    @Scripts.Render("~/bundles/controllers")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{4CE826F2-C433-447E-A981-13345D9CFD17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E86A9AFA-7340-4E83-9957-063D75B8FDEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{AFBFFBD9-6B7F-4393-A95C-C590B4AD3950}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{861464B2-F59B-4A8C-B686-2F73949830D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Web", "Application\Telemedicine.Web\Telemedicine.Web.csproj", "{90A12C93-A3C2-4AF2-8BBC-3EF13E853020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Infrastructure.Data", "Infrastructure\Telemedicine.Infrastructure.Data\Telemedicine.Infrastructure.Data.csproj", "{ED1C048E-CE34-43BF-A437-C7DC1DA7711F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Business.Interfaces", "Business\Telemedicine.Business.Interfaces\Telemedicine.Business.Interfaces.csproj", "{A98902DB-B4C1-4A7E-A266-D1A8EA60CAB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Domain.Core", "Domain\Telemedicine.Domain.Core\Telemedicine.Domain.Core.csproj", "{13449A71-2EB8-404E-97C4-705E9EA0B861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Domain.Interfaces", "Domain\Telemedicine.Domain.Interfaces\Telemedicine.Domain.Interfaces.csproj", "{73155E9B-EB65-4872-A9B0-C845E7DBEDAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Infrastructure.Business", "Infrastructure\Telemedicine.Infrastructure.Business\Telemedicine.Infrastructure.Business.csproj", "{F869B2C3-B0C8-42C3-B89A-23D7D20025E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6F83F92E-DE86-4DAE-9096-901FA41DC4E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Common", "Common\Telemedicine.Common\Telemedicine.Common.csproj", "{53093F1B-E0FE-48CB-807D-22D6A990094D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90A12C93-A3C2-4AF2-8BBC-3EF13E853020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A12C93-A3C2-4AF2-8BBC-3EF13E853020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A12C93-A3C2-4AF2-8BBC-3EF13E853020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A12C93-A3C2-4AF2-8BBC-3EF13E853020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED1C048E-CE34-43BF-A437-C7DC1DA7711F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED1C048E-CE34-43BF-A437-C7DC1DA7711F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED1C048E-CE34-43BF-A437-C7DC1DA7711F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED1C048E-CE34-43BF-A437-C7DC1DA7711F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A98902DB-B4C1-4A7E-A266-D1A8EA60CAB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98902DB-B4C1-4A7E-A266-D1A8EA60CAB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98902DB-B4C1-4A7E-A266-D1A8EA60CAB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98902DB-B4C1-4A7E-A266-D1A8EA60CAB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13449A71-2EB8-404E-97C4-705E9EA0B861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13449A71-2EB8-404E-97C4-705E9EA0B861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13449A71-2EB8-404E-97C4-705E9EA0B861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13449A71-2EB8-404E-97C4-705E9EA0B861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73155E9B-EB65-4872-A9B0-C845E7DBEDAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73155E9B-EB65-4872-A9B0-C845E7DBEDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73155E9B-EB65-4872-A9B0-C845E7DBEDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73155E9B-EB65-4872-A9B0-C845E7DBEDAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F869B2C3-B0C8-42C3-B89A-23D7D20025E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F869B2C3-B0C8-42C3-B89A-23D7D20025E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F869B2C3-B0C8-42C3-B89A-23D7D20025E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F869B2C3-B0C8-42C3-B89A-23D7D20025E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53093F1B-E0FE-48CB-807D-22D6A990094D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53093F1B-E0FE-48CB-807D-22D6A990094D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53093F1B-E0FE-48CB-807D-22D6A990094D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53093F1B-E0FE-48CB-807D-22D6A990094D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90A12C93-A3C2-4AF2-8BBC-3EF13E853020} = {4CE826F2-C433-447E-A981-13345D9CFD17}
+		{ED1C048E-CE34-43BF-A437-C7DC1DA7711F} = {E86A9AFA-7340-4E83-9957-063D75B8FDEB}
+		{A98902DB-B4C1-4A7E-A266-D1A8EA60CAB9} = {AFBFFBD9-6B7F-4393-A95C-C590B4AD3950}
+		{13449A71-2EB8-404E-97C4-705E9EA0B861} = {861464B2-F59B-4A8C-B686-2F73949830D4}
+		{73155E9B-EB65-4872-A9B0-C845E7DBEDAD} = {861464B2-F59B-4A8C-B686-2F73949830D4}
+		{F869B2C3-B0C8-42C3-B89A-23D7D20025E1} = {E86A9AFA-7340-4E83-9957-063D75B8FDEB}
+		{53093F1B-E0FE-48CB-807D-22D6A990094D} = {6F83F92E-DE86-4DAE-9096-901FA41DC4E7}
+	EndGlobalSection
+EndGlobal

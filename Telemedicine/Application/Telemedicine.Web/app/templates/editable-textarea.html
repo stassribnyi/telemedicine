@@ -1,0 +1,39 @@
+﻿<div>
+    <form class="editable-form"
+          role="form"
+          id="form_id_{{id}}"
+          data-ng-repeat="field in fields"
+          data-ng-submit="saveField(field)"
+          data-ng-style="{'padding-bottom':field.isEditable?'44px':'inital'}">
+        <div class="form-group-sm">
+            <div class="custom-editable-control">
+                <div class="custom-editable-content">
+                    <textarea class="form-control" style="resize:vertical"
+                              id="field_id_{{id}}"
+                              data-ng-model="field.commentText"
+                              data-ng-disabled="!field.isEditable"
+                              placeholer="Text"></textarea>
+                </div>
+                <div class="custom-editable-side">
+                    <span class="glyphicon glyphicon-pencil side-icon"
+                          data-ng-class="{'glyphicon-remove':field.isEditable}"
+                          data-ng-click="editField(field)"
+                          title="{{field.isEditable?'Cancel':'Edit'}}"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group-sm">
+            <button class="btn btn-success  btn-sm pull-right"
+                    data-ng-show="field.isEditable"
+                    type="submit"
+                    style="margin-left:10px">
+                {{field.id?'Update':'Save'}}
+            </button>
+            <button class="btn btn-danger btn-sm pull-right"
+                    data-ng-show="field.isEditable&&field.id"
+                    data-ng-click="removeField(field)">
+                Remove
+            </button>
+        </div>
+    </form>
+</div>

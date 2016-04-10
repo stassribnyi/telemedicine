@@ -1,0 +1,14 @@
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Interfaces.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Interfaces.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Core.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\obj\Debug\Telemedicine.Domain.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\obj\Debug\Telemedicine.Domain.Interfaces.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\obj\Debug\Telemedicine.Domain.Interfaces.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Interfaces.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Interfaces.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\bin\Debug\Telemedicine.Domain.Core.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\obj\Debug\Telemedicine.Domain.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\obj\Debug\Telemedicine.Domain.Interfaces.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Interfaces\obj\Debug\Telemedicine.Domain.Interfaces.pdb

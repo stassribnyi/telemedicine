@@ -1,0 +1,11 @@
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.dll.config
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.dll.config
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.csprojResolveAssemblyReference.cache
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.pdb

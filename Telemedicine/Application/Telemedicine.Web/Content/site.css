@@ -1,0 +1,186 @@
+﻿* {
+    font-family: Dosis, sans-serif;
+}
+
+.telemedicine-container {
+    margin-top: 71px;
+}
+
+.telemedicine-logo {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+    margin: -10px 10px 0px 0px;
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ2MyA0NjMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ2MyA0NjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDMxLjUsNDAwYy01Ljk3MiwwLTExLjU2MSwxLjY3MS0xNi4zMjUsNC41NjlMMjg3LjcxMSwyNzcuMTA0Yy0wLjIyMi0wLjIyMi0wLjQ1Ny0wLjQyMS0wLjY5OC0wLjYwOSAgIEMyOTcsMjY0LjE5OCwzMDMsMjQ4LjUzOSwzMDMsMjMxLjVjMC0xNy4wMTctNS45ODUtMzIuNjU2LTE1Ljk0OC00NC45NDZsODYuODg4LTg2Ljg4OEMzODMuMjY4LDEwNi43NywzOTQuODk3LDExMSw0MDcuNSwxMTEgICBjMzAuNjAzLDAsNTUuNS0yNC44OTcsNTUuNS01NS41UzQzOC4xMDMsMCw0MDcuNSwwUzM1MiwyNC44OTcsMzUyLDU1LjVjMCwxMi42MDMsNC4yMywyNC4yMzIsMTEuMzM0LDMzLjU1OWwtODYuODg4LDg2Ljg4OCAgIEMyNjQuMTU2LDE2NS45ODUsMjQ4LjUxNywxNjAsMjMxLjUsMTYwcy0zMi42NTYsNS45ODUtNDQuOTQ2LDE1Ljk0OGwtNDAuMTIzLTQwLjEyM2MyLjg5OC00Ljc2NCw0LjU2OS0xMC4zNTMsNC41NjktMTYuMzI1ICAgYzAtMTcuMzY5LTE0LjEzMS0zMS41LTMxLjUtMzEuNVM4OCwxMDIuMTMxLDg4LDExOS41czE0LjEzMSwzMS41LDMxLjUsMzEuNWM1Ljk3MiwwLDExLjU2MS0xLjY3MSwxNi4zMjUtNC41NjlsNDAuMTIzLDQwLjEyMyAgIEMxNjUuOTg1LDE5OC44NDQsMTYwLDIxNC40ODMsMTYwLDIzMS41YzAsOS42NTIsMS45MzMsMTguODU4LDUuNDE1LDI3LjI2NmwtOTUuNDA0LDUxLjY3N0M2Mi43NjEsMzAxLjYzLDUxLjc3NiwyOTYsMzkuNSwyOTYgICBDMTcuNzIsMjk2LDAsMzEzLjcyLDAsMzM1LjVTMTcuNzIsMzc1LDM5LjUsMzc1Uzc5LDM1Ny4yOCw3OSwzMzUuNWMwLTQuMTM3LTAuNjQyLTguMTI2LTEuODI3LTExLjg3Nmw5NS40MDgtNTEuNjc5ICAgQzE4NS40ODUsMjkwLjY4NCwyMDcuMDc3LDMwMywyMzEuNSwzMDNjMi43NCwwLDUuNDQtMC4xNyw4LjEwMS0wLjQ3Mmw5Ljk0Myw0NC43NDNDMjM5LjE1OSwzNTIuNDI2LDIzMiwzNjMuMTQsMjMyLDM3NS41ICAgYzAsMTcuMzY5LDE0LjEzMSwzMS41LDMxLjUsMzEuNXMzMS41LTE0LjEzMSwzMS41LTMxLjVjMC0xNy4xMzktMTMuNzYxLTMxLjExNS0zMC44MTMtMzEuNDgzbC05Ljk0NC00NC43NDcgICBjOC4xNzQtMi43NSwxNS42OTMtNi45MywyMi4yNTMtMTIuMjU3YzAuMTg4LDAuMjQxLDAuMzg3LDAuNDc2LDAuNjA5LDAuNjk4bDEyNy40NjQsMTI3LjQ2NCAgIEM0MDEuNjcxLDQxOS45MzksNDAwLDQyNS41MjgsNDAwLDQzMS41YzAsMTcuMzY5LDE0LjEzMSwzMS41LDMxLjUsMzEuNXMzMS41LTE0LjEzMSwzMS41LTMxLjVTNDQ4Ljg2OSw0MDAsNDMxLjUsNDAweiBNMzkuNSwzNjAgICBDMjUuOTkxLDM2MCwxNSwzNDkuMDA5LDE1LDMzNS41UzI1Ljk5MSwzMTEsMzkuNSwzMTFTNjQsMzIxLjk5MSw2NCwzMzUuNVM1My4wMDksMzYwLDM5LjUsMzYweiBNMjgwLDM3NS41ICAgYzAsOS4wOTgtNy40MDIsMTYuNS0xNi41LDE2LjVzLTE2LjUtNy40MDItMTYuNS0xNi41czcuNDAyLTE2LjUsMTYuNS0xNi41UzI4MCwzNjYuNDAyLDI4MCwzNzUuNXogTTQwNy41LDE1ICAgYzIyLjMzMiwwLDQwLjUsMTguMTY4LDQwLjUsNDAuNVM0MjkuODMyLDk2LDQwNy41LDk2UzM2Nyw3Ny44MzIsMzY3LDU1LjVTMzg1LjE2OCwxNSw0MDcuNSwxNXogTTEwMywxMTkuNSAgIGMwLTkuMDk4LDcuNDAyLTE2LjUsMTYuNS0xNi41czE2LjUsNy40MDIsMTYuNSwxNi41cy03LjQwMiwxNi41LTE2LjUsMTYuNVMxMDMsMTI4LjU5OCwxMDMsMTE5LjV6IE0yMzEuNSwyODggICBjLTMxLjE1NCwwLTU2LjUtMjUuMzQ2LTU2LjUtNTYuNXMyNS4zNDYtNTYuNSw1Ni41LTU2LjVzNTYuNSwyNS4zNDYsNTYuNSw1Ni41UzI2Mi42NTQsMjg4LDIzMS41LDI4OHogTTQzMS41LDQ0OCAgIGMtOS4wOTgsMC0xNi41LTcuNDAyLTE2LjUtMTYuNXM3LjQwMi0xNi41LDE2LjUtMTYuNXMxNi41LDcuNDAyLDE2LjUsMTYuNVM0NDAuNTk4LDQ0OCw0MzEuNSw0NDh6IiBmaWxsPSIjZWIwMjM5Ii8+Cgk8cGF0aCBkPSJNMjMxLjUsMTkyYy00LjE0MiwwLTcuNSwzLjM1OC03LjUsNy41czMuMzU4LDcuNSw3LjUsNy41YzEzLjUwOSwwLDI0LjUsMTAuOTkxLDI0LjUsMjQuNWMwLDQuMTQyLDMuMzU4LDcuNSw3LjUsNy41ICAgczcuNS0zLjM1OCw3LjUtNy41QzI3MSwyMDkuNzIsMjUzLjI4LDE5MiwyMzEuNSwxOTJ6IiBmaWxsPSIjZWIwMjM5Ii8+Cgk8cGF0aCBkPSJNNDA3LjUsNDdjNC42ODcsMCw4LjUsMy44MTMsOC41LDguNWMwLDQuMTQyLDMuMzU4LDcuNSw3LjUsNy41czcuNS0zLjM1OCw3LjUtNy41YzAtMTIuOTU4LTEwLjU0Mi0yMy41LTIzLjUtMjMuNSAgIGMtNC4xNDIsMC03LjUsMy4zNTgtNy41LDcuNVM0MDMuMzU4LDQ3LDQwNy41LDQ3eiIgZmlsbD0iI2ViMDIzOSIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+}
+
+.editable-form .form-control[disabled],
+.editable-form .input-group-btn > .btn[disabled] {
+    background-color: #F9F9F9;
+    cursor: default;
+}
+
+.editable-panel .editable-title {
+    padding-right: 30px;
+}
+
+.editable-panel .panel-heading > .editable-icon {
+    position: absolute;
+    right: 35px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.editable-form .form-control {
+    margin-bottom: 10px;
+}
+
+.custom-editable-control {
+    position: relative;
+    padding-right: 40px;
+}
+
+.custom-editable-side {
+    position: absolute;
+    background-color: #EAEAEA;
+    right: 0px;
+    top: 0;
+    left: 100%;
+    margin-left: -41px;
+    border-radius: 0 3px 3px 0;
+    bottom: 0;
+    border: 1px solid #CCCCCC;
+}
+
+    .custom-editable-side > .side-icon {
+        position: absolute;
+        margin-top: -14px;
+        margin-left: -14px;
+        cursor: pointer;
+        top: 65%;
+        left: 65%;
+    }
+
+.custom-editable-content > .form-control {
+    border-radius: 3px 0 0 3px !important;
+}
+
+.table-header-inverse {
+    background: #525252;
+    color: #DADADA;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.vertical-line {
+    border-right: 1px solid #ddd;
+}
+
+.custom-expand-glyphicon {
+    top: 3px !important;
+    left: 8px !important;
+}
+
+.custom-accordion .panel-group {
+    margin-bottom: 0;
+}
+
+.margin-top-bottom-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.custom-accordion .panel-default {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+    .custom-accordion .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border: none;
+    }
+
+    .custom-accordion .panel-default > .panel-heading {
+        background-color: transparent;
+        text-align: center;
+    }
+
+
+        .custom-accordion .panel-default > .panel-heading a:focus {
+            outline: none;
+            text-decoration: none !important;
+        }
+
+.custom-accordion .panel-body {
+    padding: 0;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.margin-right-5 {
+    margin-right: 5px;
+}
+
+.prev-next-control {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.min-height-60 {
+    min-height: 60px;
+}
+
+.custom-datepicker table td, .custom-datepicker table th {
+    padding: 1px;
+}
+
+.custom-datepicker .uib-datepicker *:focus {
+    outline: none;
+}
+
+.custom-datepicker table {
+    margin: 0 5px;
+}
+
+.custom-pagination {
+    display: table!important;
+    margin: 10px auto!important;
+}
+
+    .custom-pagination .pagination-page > a,
+    .custom-pagination .pagination-last > a,
+    .custom-pagination .pagination-first > a,
+    .custom-pagination .pagination-next > a,
+    .custom-pagination .pagination-prev > a {
+        color: #333;
+    }
+
+        .custom-pagination .pagination-page > a:hover,
+        .custom-pagination .pagination-last > a:hover,
+        .custom-pagination .pagination-first > a:hover,
+        .custom-pagination .pagination-next > a:hover,
+        .custom-pagination .pagination-prev > a:hover {
+            color: #414141;
+        }
+
+    .custom-pagination .pagination-page.active > a {
+        background-color: #525252;
+        border-color: #525252;
+        color: #DADADA;
+    }
+
+        .custom-pagination .pagination-page.active > a:hover {
+            background-color: #606060;
+            border-color: #606060;
+            color: #DADADA;
+        }

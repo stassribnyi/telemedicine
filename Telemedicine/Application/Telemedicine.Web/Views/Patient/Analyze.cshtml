@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "Analyze";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-controller="AnalyzeController" data-ng-init="init(@Model)">
+    <div class="panel panel-default editable-panel">
+        <div class="panel-heading min-height-60">
+            <h4>
+                <span data-ng-bind="analyze.patient.lastName"></span>
+                <span data-ng-bind="analyze.patient.firstName"></span>
+                <span data-ng-bind="analyze.patient.patronimic"></span>
+                <span class="pull-right">
+                    <span class="glyphicon glyphicon-sort-by-attributes margin-right-5 cursor-pointer"
+                          title="{{isDesc? 'From newest to oldest': 'From oldest to newest'}}"
+                          data-ng-class="{'glyphicon-sort-by-attributes-alt':isDesc}"
+                          data-ng-click="sort()">
+                    </span>
+                    <span class="prev-next-control">
+                        <span class="glyphicon glyphicon-arrow-left margin-right-5 cursor-pointer"
+                              data-ng-click="prevAnalyze()"
+                              title="Prev"></span>
+                        <span>{{analyze.lastMeasurement | dateParse | date:'mediumDate'}}</span>
+                        <span class="glyphicon glyphicon-arrow-right margin-left-5 cursor-pointer"
+                              data-ng-click="nextAnalyze()"
+                              title="Next"></span>
+                    </span>
+                </span>
+            </h4>
+
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 vertical-line">
+                    <div class="form-group-sm">
+
+                        <label for="temperature" class="control-label">Temperature</label>
+                        <span name="temperature"
+                              id="temperature"
+                              class="form-control"
+                              data-ng-bind="analyze.temp"></span>
+                    </div>
+                    <div class="form-group-sm">
+
+                        <label for="hartRate" class="control-label">Hart rate</label>
+                        <span name="hartRate"
+                              id="hartRate"
+                              class="form-control"
+                              data-ng-bind="analyze.hartRate"></span>
+                    </div>
+                    <div class="form-group-sm">
+
+                        <label for="pressure" class="control-label">Pressure</label>
+                        <span name="pressure"
+                              id="pressure"
+                              class="form-control">{{analyze.pressure.sys}}/{{analyze.pressure.dia}}</span>
+                    </div>
+                    <hr />
+                    <div class="form-group-sm">
+                        <uib-accordion class="custom-accordion">
+                            <uib-accordion-group is-open="analyzeAccordion.open" data-ng-init="analyzeAccordion.open=true;">
+                                <uib-accordion-heading>
+                                    {{analyzeAccordion.open?'Hide':'Show'}} analyze comments <span class="glyphicon custom-expand-glyphicon" ng-class="{'glyphicon-chevron-up': analyzeAccordion.open, 'glyphicon-chevron-down': !analyzeAccordion.open}"></span>
+                                </uib-accordion-heading>
+                                <form class="editable-form"
+                                      role="form"
+                                      id="commentForm{{comment.id}}"
+                                      data-ng-repeat="comment in analyze.comments"
+                                      data-ng-submit="updateComment(comment)"
+                                      data-ng-style="{'padding-bottom':comment.isEditable?'44px':'inital'}">                                  
+                                    <div class="form-group-sm">
+                                        <div class="custom-editable-control">
+                                            <div class="custom-editable-content">
+                                                <textarea class="form-control" style="resize:vertical"
+                                                          id="comment{{comment.id}}"
+                                                          data-ng-model="comment.commentText"
+                                                          data-ng-disabled="!comment.isEditable"
+                                                          placeholer="message"
+                                                          title="Last modified: {{comment.lastModified | dateParse | date:'mediumDate'}} by {{comment.doctor.lastName + ' ' + comment.doctor.firstName}}"></textarea>
+                                            </div>
+                                            <div class="custom-editable-side">
+                                                <span class="glyphicon glyphicon-pencil side-icon"
+                                                      data-ng-class="{'glyphicon-remove':comment.isEditable}"
+                                                      data-ng-click="editComment(comment)"
+                                                      title="{{comment.isEditable?'Cancel':'Edit'}}"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <button class="btn btn-success  btn-sm pull-right"
+                                                data-ng-show="comment.isEditable"
+                                                type="submit"
+                                                style="margin-left:10px">
+                                            {{comment.id?'Update':'Save'}}
+                                        </button>
+                                        <button class="btn btn-danger btn-sm pull-right"
+                                                data-ng-show="comment.isEditable&&comment.id"
+                                                data-ng-click="removeComment(comment.id)">
+                                            Remove
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="btn btn-success  btn-sm pull-right" data-ng-click="addComment(analyze)">Add comment</div>
+                            </uib-accordion-group>
+                        </uib-accordion>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <highchart id="chart1" config="chartConfig"></highchart>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hr class="margin-top-bottom-10" />
+                            <uib-accordion class="custom-accordion">
+                                <uib-accordion-group is-open="ecgAccordion.open">
+                                    <uib-accordion-heading>
+                                        {{ecgAccordion.open?'Hide':'Show'}} ECG comments <span class="glyphicon custom-expand-glyphicon" ng-class="{'glyphicon-chevron-up': ecgAccordion.open, 'glyphicon-chevron-down': !ecgAccordion.open}"></span>
+                                    </uib-accordion-heading>
+                                    <div class="form-group-sm">
+                                        <form class="editable-form"
+                                              role="form"
+                                              id="commentForm{{comment.id}}"
+                                              data-ng-repeat="comment in analyze.ecg.comments"
+                                              data-ng-submit="updateECGComment(comment)"
+                                              data-ng-style="{'padding-bottom':comment.isEditable?'44px':'inital'}">
+                                            <div class="form-group-sm">
+                                                <div class="custom-editable-control">
+                                                    <div class="custom-editable-content">
+                                                        <textarea class="form-control" style="resize:vertical"
+                                                                  id="comment{{comment.id}}"
+                                                                  data-ng-model="comment.commentText"
+                                                                  data-ng-disabled="!comment.isEditable"
+                                                                  placeholer="Message"
+                                                                  title="Last modified: {{comment.lastModified|dateParse | dateParse | date:'mediumDate'}}  by {{comment.doctor.lastName + ' ' + comment.doctor.firstName}}"></textarea>
+                                                    </div>
+                                                    <div class="custom-editable-side">
+                                                        <span class="glyphicon glyphicon-pencil side-icon"
+                                                              data-ng-class="{'glyphicon-remove':comment.isEditable}"
+                                                              data-ng-click="editECGComment(comment)"
+                                                              title="{{comment.isEditable?'Cancel':'Edit'}}"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-sm">
+                                                <button class="btn btn-success  btn-sm pull-right"
+                                                        data-ng-show="comment.isEditable"
+                                                        type="submit"
+                                                        style="margin-left:10px">
+                                                    {{comment.id?'Update':'Save'}}
+                                                </button>
+                                                <button class="btn btn-danger btn-sm pull-right"
+                                                        data-ng-show="comment.isEditable&&comment.id"
+                                                        data-ng-click="removeComment(comment.id)">
+                                                    Remove
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="btn btn-success  btn-sm pull-right" data-ng-click="addComment(analyze.ecg)">Add comment</div>
+                                    </div>
+                                </uib-accordion-group>
+                            </uib-accordion>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

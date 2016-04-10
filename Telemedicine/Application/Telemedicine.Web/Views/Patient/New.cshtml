@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-controller="PatientController" data-ng-init="init()" data-ng-cloak>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="editable-title">New patient</h4>
+                </div>
+                <div class="panel-body">
+                    <form class="editable-form" role="form" id="patient" data-ng-submit="savePatient(patient)">
+                        <div class="form-group-sm">
+                            <label for="fname" class="control-label">Firstname</label>
+                            <div class="">
+                                <input type="text"
+                                       class="form-control"
+                                       id="fname"
+                                       required
+                                       name="fname"
+                                       placeholder="Ivan"
+                                       data-ng-model="patient.firstName">
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="gname" class="control-label">Lastname</label>
+                            <div class="">
+                                <input type="text"
+                                       class="form-control"
+                                       required
+                                       id="gname"
+                                       name="name"
+                                       placeholder="Ivanov"
+                                       data-ng-model="patient.lastName">
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="pname" class="control-label">Patronimic</label>
+                            <div class="">
+                                <input type="text"
+                                       class="form-control"
+                                       required
+                                       id="pname"
+                                       name="pname"
+                                       placeholder="Ivanovich"
+                                       data-ng-model="patient.patronimic">
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="birth" class="control-label">Birth</label>
+                            <div class="input-group custom-datepicker">
+                                <input type="text"
+                                       id="birth" name="birth"
+                                       class="form-control"
+                                       pattern="^\d{1,2}\.\d{1,2}\.\d{4}$"
+                                       uib-datepicker-popup="{{format}}"
+                                       data-ng-model="patient.birth"
+                                       data-ng-init="birthDate = {opened: false}"
+                                       is-open="birthDate.opened"
+                                       required
+                                       datepicker-options="dateOptions"
+                                       data-ng-required="true"
+                                       close-text="Close" />
+                                <span class="input-group-btn">
+                                    <span class="btn btn-default btn-sm"
+                                          ng-click="birthDate.opened = true;">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="gender" class="control-label">Gender</label>
+                            <div class="">
+                                <select class="form-control"
+                                       required
+                                        id="gender"
+                                        ng-model="patient.gender"
+                                        ng-options="g.id as g.value for g in genders">
+                                    <option value="" disabled selected>Select a gender</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="inn" class="control-label">INN</label>
+                            <div class="">
+                                <input type="number"
+                                       class="form-control"
+                                       id="inn"
+                                       required
+                                       name="inn"
+                                       data-ng-model="patient.inn"
+                                       placeholder="10000000000">
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="device" class="control-label">Device Id</label>
+                            <div class="">
+                                <input type="text"
+                                       class="form-control"
+                                       id="device"
+                                       required
+                                       name="device"
+                                       data-ng-model="patient.deviceId"
+                                       placeholder="Device Id">
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="phone" class="control-label">Phone</label>
+                            <div class="">
+                                <input type="text"
+                                       class="form-control"
+                                       id="phone"
+                                       required
+                                       name="phone"
+                                       data-ng-model="patient.phone"
+                                       placeholder="+3800000000">
+                            </div>
+                        </div>
+                        <br />
+                        <button class="btn btn-success btn-sm pull-right"
+                                type="submit">
+                            Save
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default editable-panel">
+                <div class="panel-heading">
+                    <h4 class="editable-title">Comment</h4>
+                </div>
+                <div class="panel-body">
+                    <form class="editable-form"
+                          role="form"
+                          id="commentForm{{comment.id}}"
+                          data-ng-repeat="comment in patient.comments"
+                          data-ng-submit="updateComment(comment)"
+                          data-ng-style="{'padding-bottom':comment.isEditable?'44px':'inital'}">
+                        <div class="form-group-sm">
+                            <div class="custom-editable-control">
+                                <div class="custom-editable-content">
+                                    <textarea class="form-control" style="resize:vertical"
+                                              id="comment{{comment.id}}"
+                                              data-ng-model="comment.commentText"
+                                              data-ng-disabled="!comment.isEditable"
+                                              placeholer="Message"></textarea>
+                                </div>
+                                <div class="custom-editable-side">
+                                    <span class="glyphicon glyphicon-pencil side-icon"
+                                          data-ng-class="{'glyphicon-remove':comment.isEditable}"
+                                          data-ng-click="editComment(comment)"
+                                          title="{{comment.isEditable?'Cancel':'Edit'}}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <button class="btn btn-success  btn-sm pull-right"
+                                    data-ng-show="comment.isEditable"
+                                    type="submit"
+                                    style="margin-left:10px">
+                                {{comment.id?'Update':'Save'}}
+                            </button>
+                            <button class="btn btn-danger btn-sm pull-right"
+                                    data-ng-show="comment.isEditable&&comment.id"
+                                    data-ng-click="removeComment(comment.id)">
+                                Remove
+                            </button>
+                        </div>
+                    </form>
+                    <div class="btn btn-success btn-sm pull-right" data-ng-click="addComment(patient)">Add comment</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
