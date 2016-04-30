@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6F83F9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Common", "Common\Telemedicine.Common\Telemedicine.Common.csproj", "{53093F1B-E0FE-48CB-807D-22D6A990094D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telemedicine.Security", "Telemedicine.Security\Telemedicine.Security.csproj", "{96C212DE-AF71-49EF-9C3B-D7380C79447D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{53093F1B-E0FE-48CB-807D-22D6A990094D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53093F1B-E0FE-48CB-807D-22D6A990094D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53093F1B-E0FE-48CB-807D-22D6A990094D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C212DE-AF71-49EF-9C3B-D7380C79447D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C212DE-AF71-49EF-9C3B-D7380C79447D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C212DE-AF71-49EF-9C3B-D7380C79447D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C212DE-AF71-49EF-9C3B-D7380C79447D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 		{73155E9B-EB65-4872-A9B0-C845E7DBEDAD} = {861464B2-F59B-4A8C-B686-2F73949830D4}
 		{F869B2C3-B0C8-42C3-B89A-23D7D20025E1} = {E86A9AFA-7340-4E83-9957-063D75B8FDEB}
 		{53093F1B-E0FE-48CB-807D-22D6A990094D} = {6F83F92E-DE86-4DAE-9096-901FA41DC4E7}
+		{96C212DE-AF71-49EF-9C3B-D7380C79447D} = {6F83F92E-DE86-4DAE-9096-901FA41DC4E7}
 	EndGlobalSection
 EndGlobal

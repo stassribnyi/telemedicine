@@ -7,8 +7,11 @@ namespace Telemedicine.Business.Interfaces.Services.DoctorService
     {
         IEnumerable<DoctorDto> GetDoctors();        
         DoctorDto GetDoctor(int id);
+        DoctorDto GetDoctorByLogin(string login);
         DoctorDto CreateDoctor(DoctorDto doctor);
         void UpdateDoctor(DoctorDto doctor);
-        void RemoveDoctor(int id);        
+        void RemoveDoctor(int id);
+        bool CkeckLogin(string login);
+        bool CkeckEmail(string email);
     }
 }

@@ -6,6 +6,15 @@
     margin-top: 71px;
 }
 
+.login-panel {
+    margin-top: 25%;
+}
+
+.register-panel {
+    margin-top: 10%;
+}
+
+
 .telemedicine-logo {
     background-repeat: no-repeat;
     background-position: center;

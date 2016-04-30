@@ -13,6 +13,14 @@
                 method: 'GET',
                 url: '/api/doctor/current'
             },
+            checkLogin: {
+                method: 'POST',
+                url: '/api/doctor/checklogin/:login'
+            },
+            checkEmail: {
+                method: 'POST',
+                url: '/api/doctor/checkemail/:email'
+            },
             getDoctors: {
                 method: 'GET',
                 isArray: true

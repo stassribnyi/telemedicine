@@ -1,0 +1,14 @@
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Security.dll.config
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Security.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Security.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.csprojResolveAssemblyReference.cache
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.pdb

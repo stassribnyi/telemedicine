@@ -53,7 +53,9 @@
     <Compile Include="Services\AnalyzeService\IAnalyzeService.cs" />
     <Compile Include="Services\Comment\ICommentService.cs" />
     <Compile Include="Services\DoctorService\IDoctorService.cs" />
+    <Compile Include="Services\HospitalService\IHospitalService.cs" />
     <Compile Include="Services\PatientService\IPatientService.cs" />
+    <Compile Include="Services\SecurityService\ISecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\Telemedicine.Domain.Core\Telemedicine.Domain.Core.csproj">

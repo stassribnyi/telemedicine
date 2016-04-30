@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Telemedicine.Business.Interfaces.Services.AnalyzeService;
 using Telemedicine.Business.Interfaces.Services.CommentService;
 using Telemedicine.Business.Interfaces.Services.DoctorService;
+using Telemedicine.Business.Interfaces.Services.HospitalService;
 using Telemedicine.Business.Interfaces.Services.PatientService;
 using Telemedicine.Common.Factories;
 using Telemedicine.Domain.Interfaces.Common;
@@ -13,6 +14,7 @@ using Telemedicine.Domain.Interfaces.Repositories;
 using Telemedicine.Infrastructure.Business.Services.Analyzes;
 using Telemedicine.Infrastructure.Business.Services.CommentService;
 using Telemedicine.Infrastructure.Business.Services.DoctorService;
+using Telemedicine.Infrastructure.Business.Services.HospitalService;
 using Telemedicine.Infrastructure.Business.Services.PatientService;
 using Telemedicine.Infrastructure.Data;
 
@@ -45,6 +47,7 @@ namespace Telemedicine.Web.Util
             _kernel.Bind<IMapperFactory>().To<MapperFactory>();
             _kernel.Bind<IPatientService>().To<PatientService>();
             _kernel.Bind<IDoctorService>().To<DoctorService>();
+            _kernel.Bind<IHospitalService>().To<HospitalService>();
             _kernel.Bind<ICommentService>().To<CommentService>();
             _kernel.Bind<IAnalyzeService>().To<AnalyzeService>();
 

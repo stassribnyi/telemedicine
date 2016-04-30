@@ -146,7 +146,11 @@
     <Content Include="app\constants\gender.constant.js" />
     <Content Include="app\controllers\analyze.controller.js" />
     <Content Include="app\controllers\dashboard.controller.js" />
+    <Content Include="app\controllers\accaunt.controller.js" />
     <Content Include="app\controllers\patient.controller.js" />
+    <Content Include="app\controllers\register.controller.js" />
+    <Content Include="app\factories\account.factory.js" />
+    <Content Include="app\factories\hospital.factory.js" />
     <Content Include="app\factories\doctor.factory.js" />
     <Content Include="app\factories\comment.factory.js" />
     <Content Include="app\factories\patient.factory.js" />
@@ -976,15 +980,22 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\AuthorizeUser.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\AccountController.cs" />
     <Compile Include="Controllers\Api\AnalyzeController.cs" />
     <Compile Include="Controllers\Api\CommentController.cs" />
+    <Compile Include="Controllers\Api\Credentials.cs" />
+    <Compile Include="Controllers\Api\HospitalController.cs" />
     <Compile Include="Controllers\Api\DoctorController.cs" />
     <Compile Include="Controllers\Api\PatientController.cs" />
+    <Compile Include="Controllers\Api\StringObject.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\NinjectDependencyResolver.cs" />
   </ItemGroup>
@@ -1000,6 +1011,9 @@
     <Content Include="Scripts\jquery-2.0.3.min.map" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Patient\New.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_AuthLayout.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

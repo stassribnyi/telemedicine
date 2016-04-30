@@ -22,12 +22,29 @@ namespace Telemedicine.Infrastructure.Business.Services.DoctorService
         {
             _unitOfWork = unitOfWork;
             _doctorMapper = mapperFactory.CreateMapper<CommonProfile>().Mapper;
-        }       
+        }
+
+        public bool CkeckEmail(string email)
+        {
+            return email != null ? _unitOfWork.Doctors.GetAll().Any(x => x.Email.ToLower().Equals(email.ToLower())): true;
+        }
+
+        public bool CkeckLogin(string login)
+        {
+            return login != null ? _unitOfWork.Doctors.GetAll().Any(x => x.Login.ToLower().Equals(login.ToLower())): true;
+        }
 
         public DoctorDto CreateDoctor(DoctorDto doctor)
         {
             var model = _doctorMapper.Map<Doctor>(doctor);
+            Hospital hospital = null;
+            if (doctor.Hospital != null)
+            {
+                hospital = _unitOfWork.Hospitals.Get(doctor.Hospital.Id);
+                doctor.Hospital = null;
+            }
             _unitOfWork.Doctors.Create(model);
+            model.Hospital = hospital;
             _unitOfWork.Save();
             return _doctorMapper.Map<DoctorDto>(model);
         }
@@ -35,6 +52,11 @@ namespace Telemedicine.Infrastructure.Business.Services.DoctorService
         public DoctorDto GetDoctor(int id)
         {
             return _doctorMapper.Map<DoctorDto>(_unitOfWork.Doctors.GetAll().FirstOrDefault(x => x.Id == id));
+        }
+
+        public DoctorDto GetDoctorByLogin(string login)
+        {
+            return _doctorMapper.Map<DoctorDto>(_unitOfWork.Doctors.GetAll().FirstOrDefault(x => x.Login == login));
         }
 
         public IEnumerable<DoctorDto> GetDoctors()

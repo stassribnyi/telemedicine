@@ -1,7 +1,9 @@
 ﻿using System.Web.Mvc;
+using Telemedicine.Web.Attributes;
 
 namespace Telemedicine.Web.Controllers
 {
+    [AuthorizeUser()]
     public class PatientController : Controller
     {
         // GET: Patient
