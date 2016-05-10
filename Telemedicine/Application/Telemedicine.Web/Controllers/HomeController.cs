@@ -3,7 +3,7 @@ using Telemedicine.Web.Attributes;
 
 namespace Telemedicine.Web.Controllers
 {
-    [AuthorizeUser()]
+    [Authorize]
     public class HomeController : Controller
     {       
         // GET: Home

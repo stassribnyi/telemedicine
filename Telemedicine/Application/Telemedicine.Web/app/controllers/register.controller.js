@@ -5,9 +5,9 @@
         .module('app')
         .controller('RegisterController', register);
 
-    register.$inject = ['$scope', 'Doctor', 'Hospital'];
+    register.$inject = ['$scope', 'Doctor', 'Hospital', 'Account'];
 
-    function register($scope, Doctor, Hospital) {
+    function register($scope, Doctor, Hospital, Account) {
 
         $scope.doctor = {};
         $scope.init = function () {
@@ -33,7 +33,7 @@
         };
 
         $scope.registerDoctor = function (doctor) {
-            Doctor.save({}, doctor, function (data) {
+            Account.register({}, doctor, function (data) {
                 window.location.href = '/Account/Login';
             });
         };

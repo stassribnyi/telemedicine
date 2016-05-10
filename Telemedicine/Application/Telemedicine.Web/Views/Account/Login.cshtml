@@ -14,26 +14,29 @@
                 <form role="form" data-ng-submit="login()">
                     <fieldset>
                         <div class="form-group">
-                            <input class="form-control" 
-                                   placeholder="Login" 
-                                   name="login" 
-                                   autofocus="" 
+                            <input class="form-control"
+                                   placeholder="Login"
+                                   name="login"
                                    required
                                    type="text"
+                                   pattern=".{3,}"   
+                                   title="3 characters minimum"
                                    data-ng-model="credentials.login">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" 
-                                   placeholder="Password" 
-                                   name="password" 
-                                   value="" 
+                            <input class="form-control"
+                                   placeholder="Password"
+                                   name="password"
+                                   pattern=".{3,}"   
+                                   title="3 characters minimum"
+                                   required
                                    type="password"
                                    data-ng-model="credentials.password">
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input name="remember" 
-                                       value="Remember Me" 
+                                <input name="remember"
+                                       value="Remember Me"
                                        type="checkbox"
                                        data-ng-model="credentials.rememberMe">Remember Me
                             </label>

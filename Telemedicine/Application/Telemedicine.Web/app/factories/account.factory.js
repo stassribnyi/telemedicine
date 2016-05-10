@@ -8,9 +8,13 @@
     Account.$inject = ['$resource'];
 
     function Account($resource) {
-        return $resource('/api/account/', {}, {
+        return $resource('/account/login', {}, {
             login: {
                 method: 'POST'
+            },
+            register: {
+                method: 'POST',
+                url: '/account/register'
             }
         });
     }

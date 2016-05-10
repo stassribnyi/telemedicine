@@ -8,3 +8,8 @@ C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\d
 C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.pdb
 C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.dll
 C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.pdb
+D:\TelemedicineTestApp\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.dll.config
+D:\TelemedicineTestApp\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.dll
+D:\TelemedicineTestApp\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\bin\Debug\Telemedicine.Domain.Core.pdb
+D:\TelemedicineTestApp\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.dll
+D:\TelemedicineTestApp\diplomaproject\Telemedicine\Domain\Telemedicine.Domain.Core\obj\Debug\Telemedicine.Domain.Core.pdb

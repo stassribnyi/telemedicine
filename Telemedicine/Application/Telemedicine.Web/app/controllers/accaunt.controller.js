@@ -13,10 +13,9 @@
 
         $scope.login = function () {
             Account.login({}, $scope.credentials, function (data) {
-                console.log(data);
-            },
-            function (err) {
-                alert(err.message);
+                if (!data.success) {
+                    alert(data.error);
+                }
             });
         }
     }
