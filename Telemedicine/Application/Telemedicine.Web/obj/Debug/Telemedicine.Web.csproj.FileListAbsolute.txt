@@ -236,3 +236,22 @@ D:\TelemedicineTestApp\diplomaproject\Telemedicine\Application\Telemedicine.Web\
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Application\Telemedicine.Web\obj\Debug\Telemedicine.Web.csprojResolveAssemblyReference.cache
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Application\Telemedicine.Web\obj\Debug\Telemedicine.Web.dll
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Application\Telemedicine.Web\obj\Debug\Telemedicine.Web.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Owin.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Telemedicine.Security.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Telemedicine.Security.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Application\Telemedicine.Web\bin\Microsoft.Owin.Security.OAuth.xml

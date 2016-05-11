@@ -33,3 +33,38 @@ D:\TelemedicineTestApp\diplomaproject\Telemedicine\Telemedicine.Security\obj\Deb
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.pdb
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.Migrations.Changes.resources
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.csproj.GenerateResource.Cache
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Security.dll.config
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Security.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Security.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Owin.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Domain.Core.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Infrastructure.Data.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Domain.Interfaces.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Domain.Core.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Infrastructure.Data.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\bin\Debug\Telemedicine.Domain.Interfaces.pdb
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.csprojResolveAssemblyReference.cache
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.Migrations.Changes.resources
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.csproj.GenerateResource.Cache
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.dll
+C:\Users\Silent\Documents\Visual Studio 2015\Projects\diplomaproject\bitbucket\diplomaproject\Telemedicine\Telemedicine.Security\obj\Debug\Telemedicine.Security.pdb
