@@ -5,7 +5,7 @@
 }
 
 <div data-ng-controller="AnalyzeController" data-ng-init="init(@Model)">
-    <div class="panel panel-default editable-panel">
+    <div class="panel panel-default editable-panel" data-ng-show="analyzes">
         <div class="panel-heading min-height-60">
             <h4>
                 <span data-ng-bind="analyze.patient.lastName"></span>
@@ -168,6 +168,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="jumbotron margin-top-bottom-10" data-ng-show="!analyzes">
+        <div class="container text-center">
+            <h1>Sorry, but this patient doesnt have any analyzes!</h1>
         </div>
     </div>
 </div>

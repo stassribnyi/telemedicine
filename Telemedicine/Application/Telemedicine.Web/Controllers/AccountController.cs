@@ -26,7 +26,7 @@ namespace Telemedicine.Web.Controllers
 
         public AccountController()
         {
-            
+
         }
 
         public ApplicationSignInManager SignInManager
@@ -59,6 +59,11 @@ namespace Telemedicine.Web.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToLocal(returnUrl);
+            }
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -66,15 +71,45 @@ namespace Telemedicine.Web.Controllers
         [AllowAnonymous]
         public ActionResult Register(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToLocal(returnUrl);
+            }
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
+        [Authorize]
+        public ActionResult Cabinet(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        //[HttpPost]
+        //[Authorize]
+        //public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
+        //    }
+        //    var result = await UserManager.ChangePasswordAsync(UserManager.FindByName(User.Identity.Name).Id, model.OldPassword, model.NewPassword);
+        //    switch (result.Succeeded)
+        //    {
+        //        case SignInStatus.Success:
+        //            return Json(new { success = true });
+        //        case SignInStatus.Failure:
+        //        default:
+        //            return Json(new { success = false, error = "Username or password is not valid" });
+        //    }
+        //}
 
         [HttpPost]
         [AllowAnonymous]
         public async Task<ActionResult> Login(LogOnViewModel data)
-        {
+        {            
             if (!ModelState.IsValid)
             {
                 return View(data);
@@ -92,24 +127,18 @@ namespace Telemedicine.Web.Controllers
         }
 
 
-        
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<ActionResult> Register(DoctorDto model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Login, Email = model.Email };
+                var user = UserManager.ToApplicationUser(model);
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -118,6 +147,15 @@ namespace Telemedicine.Web.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        /// <summary>
+        /// Log out
+        /// </summary> 
+        public virtual ActionResult Logout()
+        {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)
@@ -148,7 +186,7 @@ namespace Telemedicine.Web.Controllers
             {
                 ModelState.AddModelError("", error);
             }
-        }
+        }       
 
         private ActionResult RedirectToLocal(string returnUrl)
         {

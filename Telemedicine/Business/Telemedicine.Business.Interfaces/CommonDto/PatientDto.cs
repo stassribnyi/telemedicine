@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Telemedicine.Domain.Core.Models;
 
 namespace Telemedicine.Business.Interfaces.CommonDto
@@ -13,6 +10,7 @@ namespace Telemedicine.Business.Interfaces.CommonDto
         public DateTime Birth { get; set; }
         public Gender Gender { get; set; }
         public Guid DeviceId { get; set; }
+        public ICollection<DoctorDto> Doctors { get; set; }
         public ICollection<CommentDto> Comments { get; set; }
     }
 }

@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using System;
-
+using Telemedicine.Business.Interfaces.CommonDto;
+using Telemedicine.Common.Factories;
+using Telemedicine.Security.Common;
 using Telemedicine.Security.Models;
 using Telemedicine.Security.Providers;
 using Telemedicine.Security.Services;
@@ -13,6 +16,8 @@ namespace Telemedicine.Security.Managers
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser, int>
     {
+        private static IMapper _mapper;
+
         public ApplicationUserManager(IUserStore<ApplicationUser, int> store)
             : base(store)
         {
@@ -20,6 +25,8 @@ namespace Telemedicine.Security.Managers
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
+            _mapper = new MapperFactory().CreateMapper<CommonProfile>().Mapper;
+
             var manager = new ApplicationUserManager(new ApplicationUserStore(context.Get<IdentityContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser, int>(manager)
@@ -39,7 +46,7 @@ namespace Telemedicine.Security.Managers
             };
 
             // Configure user lockout defaults
-            manager.UserLockoutEnabledByDefault = true;
+            manager.UserLockoutEnabledByDefault = false;
             manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             manager.MaxFailedAccessAttemptsBeforeLockout = 5;
 
@@ -65,6 +72,11 @@ namespace Telemedicine.Security.Managers
                     new ApplicationDataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+
+        public ApplicationUser ToApplicationUser(DoctorDto doctor)
+        {
+            return _mapper.Map<ApplicationUser>(doctor);
         }
     }
 }

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\CommonProfile.cs" />
     <Compile Include="IdentityContext.cs" />
     <Compile Include="Managers\ApplicationSignInManager.cs" />
     <Compile Include="Managers\ApplicationUserManager.cs" />
@@ -92,12 +97,17 @@
     <Compile Include="Migrations\201605101728370_Changes.Designer.cs">
       <DependentUpon>201605101728370_Changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605111412298_change app user.cs" />
+    <Compile Include="Migrations\201605111412298_change app user.Designer.cs">
+      <DependentUpon>201605111412298_change app user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationUserClaim.cs" />
     <Compile Include="Models\ApplicationUserLogin.cs" />
     <Compile Include="Models\ApplicationUserRole.cs" />
+    <Compile Include="Models\Hospital.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationDataProtectorTokenProvider.cs" />
     <Compile Include="Providers\ApplicationEmailTokenProvider.cs" />
@@ -111,9 +121,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Telemedicine.Domain.Core\Telemedicine.Domain.Core.csproj">
-      <Project>{13449a71-2eb8-404e-97c4-705e9ea0b861}</Project>
-      <Name>Telemedicine.Domain.Core</Name>
+    <ProjectReference Include="..\Business\Telemedicine.Business.Interfaces\Telemedicine.Business.Interfaces.csproj">
+      <Project>{A98902DB-B4C1-4A7E-A266-D1A8EA60CAB9}</Project>
+      <Name>Telemedicine.Business.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Telemedicine.Common\Telemedicine.Common.csproj">
+      <Project>{53093f1b-e0fe-48cb-807d-22d6a990094d}</Project>
+      <Name>Telemedicine.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Telemedicine.Infrastructure.Data\Telemedicine.Infrastructure.Data.csproj">
       <Project>{ED1C048E-CE34-43BF-A437-C7DC1DA7711F}</Project>
@@ -123,6 +137,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605101728370_Changes.resx">
       <DependentUpon>201605101728370_Changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605111412298_change app user.resx">
+      <DependentUpon>201605111412298_change app user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

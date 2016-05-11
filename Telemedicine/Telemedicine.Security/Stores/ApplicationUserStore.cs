@@ -6,6 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Linq;
+using System.Data.Entity.Core;
+using System.Data.Entity.Validation;
+using Telemedicine.Security.Common;
+using Telemedicine.Common.Factories;
+using AutoMapper;
 
 namespace Telemedicine.Security.Stores
 {
@@ -14,7 +19,10 @@ namespace Telemedicine.Security.Stores
                          IUserLoginStore<ApplicationUser, int>,
                          IUserRoleStore<ApplicationUser, int>,
                          IUserPasswordStore<ApplicationUser, int>,
-                         IUserSecurityStampStore<ApplicationUser, int>
+                         IUserSecurityStampStore<ApplicationUser, int>,
+                         IUserEmailStore<ApplicationUser, int>,
+                         IUserLockoutStore<ApplicationUser, int>,
+                         IUserTwoFactorStore<ApplicationUser, int>
     {
         private IdentityContext _db;
 
@@ -28,33 +36,33 @@ namespace Telemedicine.Security.Stores
             _db = database;
         }
 
-        public Task CreateAsync(ApplicationUser user)
+        public async Task CreateAsync(ApplicationUser user)
         {
             _db.Users.Add(user);
-            return _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(ApplicationUser user)
+        public async Task DeleteAsync(ApplicationUser user)
         {
             _db.Users.Remove(user);
-            return _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
 
-        public Task<ApplicationUser> FindByIdAsync(int userId)
+        public async Task<ApplicationUser> FindByIdAsync(int userId)
         {
-            return _db.Users.SingleOrDefaultAsync(x => x.Id == userId);
+            return await _db.Users.SingleOrDefaultAsync(x => x.Id == userId);
         }
 
-        public Task<ApplicationUser> FindByNameAsync(string userName)
+        public async Task<ApplicationUser> FindByNameAsync(string userName)
         {
-            return _db.Users.SingleOrDefaultAsync(x => x.UserName.ToLower().Equals(userName.ToLower()));
+            return await _db.Users.SingleOrDefaultAsync(x => x.UserName.ToLower().Equals(userName.ToLower()));
         }
 
-        public Task UpdateAsync(ApplicationUser user)
+        public async Task UpdateAsync(ApplicationUser user)
         {
             _db.Users.Attach(user);
             _db.Entry(user).State = EntityState.Modified;
-            return _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
 
         public void Dispose()
@@ -62,7 +70,7 @@ namespace Telemedicine.Security.Stores
             _db.Dispose();
         }
 
-        public Task AddLoginAsync(ApplicationUser user, UserLoginInfo login)
+        public async Task AddLoginAsync(ApplicationUser user, UserLoginInfo login)
         {
             var result = _db.Users.SingleOrDefault(x => x.Id == user.Id);
 
@@ -76,34 +84,47 @@ namespace Telemedicine.Security.Stores
                 });
             }
 
-            return _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
 
-        public Task RemoveLoginAsync(ApplicationUser user, UserLoginInfo login)
+        public async Task RemoveLoginAsync(ApplicationUser user, UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            var userLogin = user.Logins.SingleOrDefault(x => x.ProviderKey.Equals(login.ProviderKey) && x.LoginProvider.Equals(login.LoginProvider));
+            if (userLogin != null)
+            {
+                user.Logins.Remove(userLogin);
+            }
+
+            await _db.SaveChangesAsync();
         }
 
-        public Task<IList<UserLoginInfo>> GetLoginsAsync(ApplicationUser user)
+        public async Task<IList<UserLoginInfo>> GetLoginsAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
-
-            //return _db.Users.SingleOrDefault(x => x.Id == user.Id).Logins.Select(x=>new UserLoginInfo(x.LoginProvider, x.ProviderKey)).ToListAsync();
+            return await Task.FromResult(user.Logins.Select(x => new UserLoginInfo(x.LoginProvider, x.ProviderKey)).ToList());
         }
 
-        public Task<ApplicationUser> FindAsync(UserLoginInfo login)
+        public async Task<ApplicationUser> FindAsync(UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            return await _db.Users.SingleOrDefaultAsync(x => x.Logins.Any(z => z.ProviderKey.Equals(login.ProviderKey) && z.LoginProvider.Equals(login.LoginProvider)));
         }
 
-        public Task<IList<Claim>> GetClaimsAsync(ApplicationUser user)
+        public async Task<IList<Claim>> GetClaimsAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(user.Claims.Select(x => new Claim(x.ClaimType, x.ClaimValue)).ToList());
         }
 
-        public Task AddClaimAsync(ApplicationUser user, Claim claim)
+        //TODO Test this solution
+        public async Task AddClaimAsync(ApplicationUser user, Claim claim)
         {
-            throw new NotImplementedException();
+            var entity = await _db.Users.SingleOrDefaultAsync(x => x.Id == user.Id);
+            if (entity == null) throw new ObjectNotFoundException();
+            entity.Claims.Add(new ApplicationUserClaim
+            {
+                ClaimType = claim.Type,
+                ClaimValue = claim.Value
+            });
+
+            await _db.SaveChangesAsync();
         }
 
         public Task RemoveClaimAsync(ApplicationUser user, Claim claim)
@@ -111,49 +132,192 @@ namespace Telemedicine.Security.Stores
             throw new NotImplementedException();
         }
 
-        public Task AddToRoleAsync(ApplicationUser user, string roleName)
+        public async Task AddToRoleAsync(ApplicationUser user, string roleName)
         {
-            throw new NotImplementedException();
+            var entity = await _db.Users.SingleOrDefaultAsync(x => x.Id == user.Id);
+            var role = await _db.Roles.SingleOrDefaultAsync(x => x.Name.Equals(roleName));
+            if (entity == null) throw new ObjectNotFoundException();
+            if (role == null) throw new ObjectNotFoundException();
+            entity.Roles.Add(new ApplicationUserRole
+            {
+                RoleId = role.Id,
+                UserId = user.Id
+            });
+
+            await _db.SaveChangesAsync();
         }
 
-        public Task RemoveFromRoleAsync(ApplicationUser user, string roleName)
+        public async Task RemoveFromRoleAsync(ApplicationUser user, string roleName)
         {
-            throw new NotImplementedException();
+            var role = _db.Roles.SingleOrDefault(x => x.Name.Equals(roleName));
+
+            if (role == null)
+            {
+                throw new ObjectNotFoundException();
+            }
+
+            var userRole = user.Roles.SingleOrDefault(x => x.RoleId == role.Id);
+
+            if (userRole != null)
+            {
+                user.Roles.Remove(userRole);
+            }
+
+            await _db.SaveChangesAsync();
         }
 
-        public Task<IList<string>> GetRolesAsync(ApplicationUser user)
+        public async Task<IList<string>> GetRolesAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            var roles = _db.Roles;
+            var elements = new List<ApplicationRole>();
+
+            foreach (var role in roles)
+            {
+                if (user.Roles.Any(x => x.RoleId == role.Id))
+                {
+                    elements.Add(role);
+                }
+            }
+
+            var result = elements.Select(x => x.Name).ToList();
+            return await Task.FromResult(result);
         }
 
-        public Task<bool> IsInRoleAsync(ApplicationUser user, string roleName)
+        public async Task<bool> IsInRoleAsync(ApplicationUser user, string roleName)
         {
-            throw new NotImplementedException();
+            var roles = _db.Roles;
+            var elements = new List<ApplicationRole>();
+
+            foreach (var role in roles)
+            {
+                if (user.Roles.Any(x => x.RoleId == role.Id))
+                {
+                    elements.Add(role);
+                }
+            }
+
+            var isInRole = elements.Any(x => x.Name.Equals(roleName));
+            return await Task.FromResult(isInRole);
         }
 
-        public Task SetSecurityStampAsync(ApplicationUser user, string stamp)
+        public async Task SetSecurityStampAsync(ApplicationUser user, string stamp)
         {
-            throw new NotImplementedException();
+            user.SecurityStamp = stamp;
+            await Task.FromResult(0);
         }
 
-        public Task<string> GetSecurityStampAsync(ApplicationUser user)
+        public async Task<string> GetSecurityStampAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(user.SecurityStamp);
         }
 
-        public Task SetPasswordHashAsync(ApplicationUser user, string passwordHash)
+        public async Task SetPasswordHashAsync(ApplicationUser user, string passwordHash)
         {
-            throw new NotImplementedException();
+            user.PasswordHash = passwordHash;
+            await Task.FromResult(0);
         }
 
-        public Task<string> GetPasswordHashAsync(ApplicationUser user)
+        public async Task<string> GetPasswordHashAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(user.PasswordHash);
         }
 
-        public Task<bool> HasPasswordAsync(ApplicationUser user)
+        public async Task<bool> HasPasswordAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            var hasPassword = string.IsNullOrEmpty(user.PasswordHash);
+            return await Task.FromResult(hasPassword);
+        }
+
+        public async Task SetEmailAsync(ApplicationUser user, string email)
+        {
+            user.Email = email;
+            await Task.FromResult(0);
+        }
+
+        public async Task<string> GetEmailAsync(ApplicationUser user)
+        {
+            return await Task.FromResult(user.Email);
+        }
+
+        public async Task<bool> GetEmailConfirmedAsync(ApplicationUser user)
+        {
+            return await Task.FromResult(user.EmailConfirmed);
+        }
+
+        public async Task SetEmailConfirmedAsync(ApplicationUser user, bool confirmed)
+        {
+            user.EmailConfirmed = confirmed;
+            await Task.FromResult(0);
+        }
+
+        public async Task<ApplicationUser> FindByEmailAsync(string email)
+        {
+            return await _db.Users.SingleOrDefaultAsync(x => x.Email.ToLower().Equals(email.ToLower()));
+        }
+
+        private ApplicationUser ToIdentityUser(ApplicationUser user)
+        {
+            return new ApplicationUser
+            {
+                Id = user.Id,
+                PasswordHash = user.PasswordHash,
+                SecurityStamp = user.SecurityStamp,
+                UserName = user.UserName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+            };
+        }
+
+        public async Task<DateTimeOffset> GetLockoutEndDateAsync(ApplicationUser user)
+        {
+            var lockOutDate = user.LockoutEndDateUtc.HasValue ? user.LockoutEndDateUtc.Value : new DateTimeOffset(DateTime.Now.AddMinutes(-5));
+            return await Task.FromResult(lockOutDate);
+        }
+
+        public async Task SetLockoutEndDateAsync(ApplicationUser user, DateTimeOffset lockoutEnd)
+        {
+            user.LockoutEndDateUtc = DateTime.UtcNow.AddMinutes(lockoutEnd.Minute);
+            user.LockoutEnabled = true;
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<int> IncrementAccessFailedCountAsync(ApplicationUser user)
+        {
+            user.AccessFailedCount++;
+            return await _db.SaveChangesAsync();
+        }
+
+        public async Task ResetAccessFailedCountAsync(ApplicationUser user)
+        {
+            user.AccessFailedCount = 0;
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<int> GetAccessFailedCountAsync(ApplicationUser user)
+        {
+            return await Task.FromResult(user.AccessFailedCount);
+        }
+
+        public async Task<bool> GetLockoutEnabledAsync(ApplicationUser user)
+        {
+            return await Task.FromResult(user.LockoutEnabled);
+        }
+
+        public async Task SetLockoutEnabledAsync(ApplicationUser user, bool enabled)
+        {
+            user.LockoutEnabled = enabled;
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task SetTwoFactorEnabledAsync(ApplicationUser user, bool enabled)
+        {
+            user.TwoFactorEnabled = enabled;
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<bool> GetTwoFactorEnabledAsync(ApplicationUser user)
+        {
+            return await Task.FromResult(user.TwoFactorEnabled);
         }
     }
 }

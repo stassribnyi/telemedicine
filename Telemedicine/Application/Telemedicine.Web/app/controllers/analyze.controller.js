@@ -42,33 +42,17 @@
 
         $scope.init = function (id) {
             Analyze.getAll({ id: id }, function (data) {
-
-                //var n = angular.copy(data[0]);
-                //n.id = 0;
-                //n.patient = null;
-                //n.ecg.id = 0;
-                //n.comments.forEach(function (x) {
-                //    x.id = 0;
-                //});
-                //n.ecg.comments.forEach(function (x) {
-                //    x.id = 0;
-                //});
-                //n.ecg.datas.forEach(function (x) {
-                //    x.id = 0;
-                //});
-
-                //Analyze.save({ patientId: $scope.analyze.patient.id }, n, function (data) {
-                //    console.log(data);
-                //});
-                $scope.analyzes = sortAnalyzes(data).reverse();
-                $scope.analyze = $scope.analyzes[$scope.analyzes.length - 1];
-                $scope.chartConfig.subtitle = { text: $scope.analyze.patient.lastName + ' ' + $scope.analyze.patient.firstName + ' ' + $scope.analyze.patient.patronimic + ' from ' + moment($scope.analyze.lastMeasurement).format('MMMM Do YYYY, h:mm:ss a') }
-                $scope.chartConfig.series = [{
-                    name: 'ECG',
-                    data: $scope.analyze.ecg.datas.map(function (element) {
-                        return [element.time, element.rr];
-                    }),
-                }];
+                if (data.length > 0) {
+                    $scope.analyzes = sortAnalyzes(data).reverse();
+                    $scope.analyze = $scope.analyzes[$scope.analyzes.length - 1];
+                    $scope.chartConfig.subtitle = { text: $scope.analyze.patient.lastName + ' ' + $scope.analyze.patient.firstName + ' ' + $scope.analyze.patient.patronimic + ' from ' + moment($scope.analyze.lastMeasurement).format('MMMM Do YYYY, h:mm:ss a') }
+                    $scope.chartConfig.series = [{
+                        name: 'ECG',
+                        data: $scope.analyze.ecg.datas.map(function (element) {
+                            return [element.time, element.rr];
+                        }),
+                    }];
+                }
             });
 
             $scope.doctor = Doctor.getCurrent({}, function (data) {

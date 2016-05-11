@@ -5,18 +5,22 @@
         .module('app')
         .controller('DashboardController', dashboardController);
 
-    dashboardController.$inject = ['$scope', 'Patient', '$location'];
+    dashboardController.$inject = ['$scope', 'Patient', '$location', 'Doctor'];
 
-    function dashboardController($scope, Patient, $location) {
+    function dashboardController($scope, Patient, $location, Doctor) {
 
         $scope.currentPage = 1;
-        $scope.itemPerPage = 12;        
+        $scope.itemPerPage = 12;
 
-        Patient.getByDoctorId({}, function (data) {
-            $scope.patients = data;           
-        });
+        $scope.init = function () {
+            Doctor.getCurrent({}, function (data) {
+                Patient.getByDoctorId({ id: data.id }, function (data) {
+                    $scope.patients = data;
+                });
+            });
 
-
+        };
+        
         $scope.showPatient = function (id) {
             window.location.href = '/Patient/?patientId=' + id;
         };

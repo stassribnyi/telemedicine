@@ -15,6 +15,5 @@ D:\TelemedicineTestApp\diplomaproject\Telemedicine\Common\Telemedicine.Common\bi
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Common\Telemedicine.Common\bin\Debug\Telemedicine.Common.pdb
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Common\Telemedicine.Common\bin\Debug\AutoMapper.dll
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Common\Telemedicine.Common\bin\Debug\AutoMapper.xml
-D:\TelemedicineTestApp\diplomaproject\Telemedicine\Common\Telemedicine.Common\obj\Debug\Telemedicine.Common.csprojResolveAssemblyReference.cache
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Common\Telemedicine.Common\obj\Debug\Telemedicine.Common.dll
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Common\Telemedicine.Common\obj\Debug\Telemedicine.Common.pdb

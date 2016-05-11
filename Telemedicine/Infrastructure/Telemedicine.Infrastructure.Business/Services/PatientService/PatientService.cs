@@ -36,6 +36,9 @@ namespace Telemedicine.Infrastructure.Business.Services.PatientService
         public PatientDto CreatePatient(PatientDto patient)
         {
             var model = _patientMapper.Map<Patient>(patient);
+            var doctor = _unitOfWork.Doctors.Get(patient.Doctors.LastOrDefault().Id);
+            model.Doctors.Clear();
+            model.Doctors.Add(doctor);
             _unitOfWork.Patients.Create(model);
             _unitOfWork.Save();
             return _patientMapper.Map<PatientDto>(model);
@@ -48,8 +51,9 @@ namespace Telemedicine.Infrastructure.Business.Services.PatientService
 
         public IEnumerable<PatientDto> GetPatients(int? id)
         {
-            return _patientMapper.Map<IEnumerable<PatientDto>>(_unitOfWork.Patients.GetAll()
+            var ss  = _patientMapper.Map<IEnumerable<PatientDto>>(_unitOfWork.Patients.GetAll()
                 .Where(x => id.HasValue ? x.Doctors.Any(z => z.Id == id.Value) : true));
+            return ss;
         }
 
         public void RemovePatient(int id)

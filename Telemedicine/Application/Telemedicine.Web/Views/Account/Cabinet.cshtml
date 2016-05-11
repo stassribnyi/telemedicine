@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewBag.Title = "Cabinet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-controller="CabinetController" data-ng-init="init()" data-ng-cloak>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="panel panel-default register-panel">
+                <div class="panel-heading">
+                    <h4 class="editable-title">Edit personal info</h4>
+                </div>
+                <div class="panel-body">
+                    <form class="editable-form" role="form" id="doctor" data-ng-submit="editDoctor(doctor)">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group-sm">
+                                    <label for="login" class="control-label">Login</label>
+                                    <div class="input-group">
+                                        <input type="text"
+                                               class="form-control"
+                                               id="login"
+                                               required
+                                               name="login"
+                                               placeholder="Login"
+                                               data-ng-model="doctor.login"
+                                               data-ng-change="checkLogin(doctor.login)">
+                                        <div class="input-group-addon">
+                                            <span class="text-success inline-block" ng-show="!invalidLogin">
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </span>
+                                            <span class="text-danger inline-block" ng-show="invalidLogin">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label for="email" class="control-label">Email</label>
+                                    <div class="input-group">
+                                        <input type="email"
+                                               class="form-control"
+                                               id="email"
+                                               required
+                                               name="email"
+                                               data-ng-model="doctor.email"
+                                               data-ng-change="checkEmail(doctor.email)"
+                                               placeholder="example@example.com">
+                                        <div class="input-group-addon">
+                                            <span class="text-success inline-block" ng-show="!invalidEmail">
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </span>
+                                            <span class="text-danger inline-block" ng-show="invalidEmail">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group-sm" data-ng-show="false">
+                                    <label for="password" class="control-label">Password</label>
+                                    <div class="">
+                                        <input type="password"
+                                               class="form-control"
+                                               id="password"
+                                               required
+                                               name="password"
+                                               placeholder="*********"
+                                               data-ng-model="doctor.password"
+                                               data-ng-change="checkPassword(doctor.password,doctor.confPassword)">
+                                    </div>
+                                </div>
+                                <div class="form-group-sm" data-ng-show="false">
+                                    <label for="cpassword" class="control-label">Confirm password</label>
+                                    <div class="input-group">
+                                        <input type="password"
+                                               class="form-control"
+                                               id="cpassword"
+                                               required
+                                               name="cpassword"
+                                               placeholder="*********"
+                                               data-ng-model="doctor.confPassword"
+                                               data-ng-change="checkPassword(doctor.password,doctor.confPassword)">
+                                        <div class="input-group-addon">
+                                            <span class="text-success inline-block" ng-show="!invalidPassword">
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </span>
+                                            <span class="text-danger inline-block" ng-show="invalidPassword">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label for="phone" class="control-label">Phone</label>
+                                    <div class="">
+                                        <input type="tel"
+                                               class="form-control"
+                                               id="phone"
+                                               required
+                                               name="phone"
+                                               data-ng-model="doctor.phone"
+                                               placeholder="+3800000000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-sm">
+                                    <label for="fname" class="control-label">Firstname</label>
+                                    <div class="">
+                                        <input type="text"
+                                               class="form-control"
+                                               id="fname"
+                                               required
+                                               name="fname"
+                                               placeholder="Ivan"
+                                               data-ng-model="doctor.firstName">
+                                    </div>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label for="gname" class="control-label">Lastname</label>
+                                    <div class="">
+                                        <input type="text"
+                                               class="form-control"
+                                               required
+                                               id="gname"
+                                               name="name"
+                                               placeholder="Ivanov"
+                                               data-ng-model="doctor.lastName">
+                                    </div>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label for="pname" class="control-label">Patronimic</label>
+                                    <div class="">
+                                        <input type="text"
+                                               class="form-control"
+                                               required
+                                               id="pname"
+                                               name="pname"
+                                               placeholder="Ivanovich"
+                                               data-ng-model="doctor.patronimic">
+                                    </div>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label for="hospital" class="control-label">Hospital</label>
+                                    <div class="">
+                                        <select class="form-control"
+                                                required
+                                                id="hospital"
+                                                ng-model="doctor.hospital"
+                                                ng-options="g as g.hospitalName for g in hospitals">
+                                            <option value="" disabled selected>Select a hospital</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group-sm">
+                                    <label for="ms" class="control-label">Medical Specialization</label>
+                                    <div class="">
+                                        <textarea type="text" style="resize: vertical;"
+                                                  class="form-control"
+                                                  id="ms"
+                                                  required
+                                                  name="ms"
+                                                  data-ng-model="doctor.medicalSpecialization"
+                                                  placeholder="Medical Specialization"></textarea>
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-success btn-sm pull-right"
+                                        type="submit"
+                                        data-ng-disabled="invalidLogin||invalidPassword||invalidEmail">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using Telemedicine.Web.Attributes;
 
 namespace Telemedicine.Web.Controllers
 {

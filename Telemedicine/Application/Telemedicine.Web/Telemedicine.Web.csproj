@@ -181,9 +181,11 @@
     <Content Include="app\app.js" />
     <Content Include="app\constants\gender.constant.js" />
     <Content Include="app\controllers\analyze.controller.js" />
+    <Content Include="app\controllers\base.controller.js" />
     <Content Include="app\controllers\dashboard.controller.js" />
-    <Content Include="app\controllers\accaunt.controller.js" />
+    <Content Include="app\controllers\account.controller.js" />
     <Content Include="app\controllers\patient.controller.js" />
+    <Content Include="app\controllers\cabinet.controller.js" />
     <Content Include="app\controllers\register.controller.js" />
     <Content Include="app\factories\account.factory.js" />
     <Content Include="app\factories\hospital.factory.js" />
@@ -1017,9 +1019,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Attributes\AuthorizeUser.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Api\AccountController.cs" />
     <Compile Include="Controllers\Api\AnalyzeController.cs" />
     <Compile Include="Controllers\Api\CommentController.cs" />
     <Compile Include="Controllers\Api\Credentials.cs" />
@@ -1033,6 +1033,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Models\ChangePasswordViewModel.cs" />
     <Compile Include="Models\LogOnViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1054,6 +1055,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_AuthLayout.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Cabinet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1065,6 +1067,7 @@
     <Folder Include="app\directives\" />
     <Folder Include="app\services\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Attributes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\Telemedicine.Business.Interfaces\Telemedicine.Business.Interfaces.csproj">

@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div data-ng-controller="DashboardController" data-ng-cloak>
+<div data-ng-controller="DashboardController" data-ng-init="init()" data-ng-cloak>
     <div class="row">
         <div class="col-md-12">
             <h1 data-ng-bind="title"></h1>

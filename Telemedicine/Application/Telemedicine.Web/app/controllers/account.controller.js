@@ -16,6 +16,8 @@
                 if (!data.success) {
                     alert(data.error);
                 }
+
+                window.location.href = '/';
             });
         }
     }

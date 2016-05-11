@@ -43,6 +43,7 @@ D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.I
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.Infrastructure.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.Infrastructure.Data\obj\Debug\Telemedicine.Infrastructure.Data.csprojResolveAssemblyReference.cache
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.Infrastructure.Data\obj\Debug\Telemedicine.Infrastructure.Data.Migrations.init.resources
+D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.Infrastructure.Data\obj\Debug\Telemedicine.Infrastructure.Data.Migrations.changestringlength.resources
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.Infrastructure.Data\obj\Debug\Telemedicine.Infrastructure.Data.csproj.GenerateResource.Cache
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.Infrastructure.Data\obj\Debug\Telemedicine.Infrastructure.Data.dll
 D:\TelemedicineTestApp\diplomaproject\Telemedicine\Infrastructure\Telemedicine.Infrastructure.Data\obj\Debug\Telemedicine.Infrastructure.Data.pdb

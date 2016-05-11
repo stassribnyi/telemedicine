@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Routing;
 using Telemedicine.Business.Interfaces.CommonDto;
 using Telemedicine.Business.Interfaces.Services.DoctorService;
 
@@ -17,8 +18,8 @@ namespace Telemedicine.Web.Controllers.Api
         [Route("api/doctor/current")]
         public IHttpActionResult GetCurrent()
         {
-            var id = 3;
-            var doctor = _doctorService.GetDoctor(id);
+            var login = RequestContext.Principal.Identity.Name;
+            var doctor = _doctorService.GetDoctorByLogin(login);
             return Ok(doctor);
         }
         

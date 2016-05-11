@@ -10,7 +10,8 @@
     function patientController($scope, Patient, Gender, Doctor, Comment) {
         $scope.genders = angular.copy(Gender);
         $scope.patient = {
-            comments: []
+            comments: [],
+            doctors: []
         }
 
         $scope.isPatientFormEditable = false;
@@ -22,13 +23,16 @@
         }
 
         $scope.init = function (id) {
-            if (id) {
-                $scope.patient = Patient.getById({ id: id }, function (data) {
-                });
-            }
-            $scope.doctor = Doctor.getCurrent({}, function (data) {
-                console.log(data);
-            });
+            Doctor.getCurrent({}, function (data) {
+                $scope.doctor = data;
+                if (id) {
+                    $scope.patient = Patient.getById({ id: id }, function (data) {
+                    });
+                }
+                else {
+                    $scope.patient.doctors.push(data);
+                }
+            });                     
         }
 
         $scope.addComment = function (patient) {

@@ -14,7 +14,7 @@ namespace Telemedicine.Domain.Core.Models
         [MaxLength(16)]
         public string Login { get; set; }
         [MinLength(6)]
-        [MaxLength(16)]
+        [MaxLength(256)]
         public string Password { get; set; }
         [MinLength(3)]
         [MaxLength(16)]
@@ -26,6 +26,8 @@ namespace Telemedicine.Domain.Core.Models
         [MaxLength(16)]
         public string Patronimic { get; set; }
 
+        [MinLength(6)]
+        [MaxLength(256)]
         public string Email { get; set; }
         public string Phone { get; set; }
         public string MedicalSpecialization { get; set; }

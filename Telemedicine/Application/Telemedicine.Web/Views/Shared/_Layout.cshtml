@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/bundles/css")
 </head>
-<body role="document">
+<body role="document" data-ng-controller="BaseController">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -18,7 +18,18 @@
 
                     <li><a href="/Patient/New"><span class="glyphicon glyphicon-plus margin-right-5"></span><span>New Patient</span></a></li>
                     <li><a href="/"><span class="glyphicon glyphicon-th-list margin-right-5"></span><span>Patients</span></a></li>
-                    <li><a href="/"><span class="glyphicon glyphicon-user margin-right-5"></span><span>Anton Lermontov</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span>{{currentDoctor.firstName}}</span> <span>{{currentDoctor.lastName}}</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Account/Logout">Logout</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
