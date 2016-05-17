@@ -79,7 +79,7 @@
                                                           placeholer="message"
                                                           title="Last modified: {{comment.lastModified | dateParse | date:'mediumDate'}} by {{comment.doctor.lastName + ' ' + comment.doctor.firstName}}"></textarea>
                                             </div>
-                                            <div class="custom-editable-side">
+                                            <div class="btn btn-default custom-editable-side">
                                                 <span class="glyphicon glyphicon-pencil side-icon"
                                                       data-ng-class="{'glyphicon-remove':comment.isEditable}"
                                                       data-ng-click="editComment(comment)"
@@ -138,7 +138,7 @@
                                                                   placeholer="Message"
                                                                   title="Last modified: {{comment.lastModified|dateParse | dateParse | date:'mediumDate'}}  by {{comment.doctor.lastName + ' ' + comment.doctor.firstName}}"></textarea>
                                                     </div>
-                                                    <div class="custom-editable-side">
+                                                    <div class="btn btn-default custom-editable-side">
                                                         <span class="glyphicon glyphicon-pencil side-icon"
                                                               data-ng-class="{'glyphicon-remove':comment.isEditable}"
                                                               data-ng-click="editECGComment(comment)"

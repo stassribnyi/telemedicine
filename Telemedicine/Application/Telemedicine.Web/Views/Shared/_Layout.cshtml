@@ -24,10 +24,10 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Account</a></li>
-                            <li><a href="#">Settings</a></li>
+                            <li><a href="@Url.Action("Cabinet", "Account")">Account</a></li>
+                            <li><a href="@Url.Action("Settings", "Account")">Settings</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/Account/Logout">Logout</a></li>
+                            <li><a href="@Url.Action("Logout", "Account")">Logout</a></li>
                         </ul>
                     </li>
                 </ul>

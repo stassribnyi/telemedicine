@@ -18,7 +18,7 @@
                             <div class="col-md-6">
                                 <div class="form-group-sm">
                                     <label for="login" class="control-label">Login</label>
-                                    <div class="input-group">
+                                    <div class="input-group input-group-sm">
                                         <input type="text"
                                                class="form-control"
                                                id="login"
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="form-group-sm">
                                     <label for="email" class="control-label">Email</label>
-                                    <div class="input-group">
+                                    <div class="input-group input-group-sm">
                                         <input type="email"
                                                class="form-control"
                                                id="email"
@@ -58,40 +58,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group-sm" data-ng-show="false">
-                                    <label for="password" class="control-label">Password</label>
-                                    <div class="">
-                                        <input type="password"
-                                               class="form-control"
-                                               id="password"
-                                               required
-                                               name="password"
-                                               placeholder="*********"
-                                               data-ng-model="doctor.password"
-                                               data-ng-change="checkPassword(doctor.password,doctor.confPassword)">
-                                    </div>
-                                </div>
-                                <div class="form-group-sm" data-ng-show="false">
-                                    <label for="cpassword" class="control-label">Confirm password</label>
-                                    <div class="input-group">
-                                        <input type="password"
-                                               class="form-control"
-                                               id="cpassword"
-                                               required
-                                               name="cpassword"
-                                               placeholder="*********"
-                                               data-ng-model="doctor.confPassword"
-                                               data-ng-change="checkPassword(doctor.password,doctor.confPassword)">
-                                        <div class="input-group-addon">
-                                            <span class="text-success inline-block" ng-show="!invalidPassword">
-                                                <span class="glyphicon glyphicon-ok"></span>
-                                            </span>
-                                            <span class="text-danger inline-block" ng-show="invalidPassword">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="form-group-sm">
                                     <label for="phone" class="control-label">Phone</label>
                                     <div class="">
@@ -104,7 +70,58 @@
                                                placeholder="+3800000000">
                                     </div>
                                 </div>
-                            </div>
+                                <div class="btn btn-link btn-sm padding-left-none" data-ng-click="showResetPassword=!showResetPassword;">Change password</div>
+                                <div class="form-group-sm" data-ng-show="showResetPassword">
+                                    <label for="oldPassword" class="control-label">Old Password</label>
+                                    <div class="">
+                                        <input type="password"
+                                               class="form-control"
+                                               id="oldPassword"
+                                               required
+                                               name="oldPassword"
+                                               placeholder="*********"
+                                               data-ng-model="oldPassword">
+                                    </div>
+                                </div>
+                                <div class="form-group-sm" data-ng-show="showResetPassword">
+                                    <label for="newPassword" class="control-label">New Password</label>
+                                    <div class="">
+                                        <input type="password"
+                                               class="form-control"
+                                               id="newPassword"
+                                               required
+                                               name="newPassword"
+                                               placeholder="*********"
+                                               data-ng-model="newPassword"
+                                               data-ng-change="checkPassword(newPassword, confPassword)">
+                                    </div>
+                                </div>
+                                <div class="form-group-sm" data-ng-show="showResetPassword">
+                                    <label for="confPassword" class="control-label">Confirm password</label>
+                                    <div class="input-group input-group-sm">
+                                        <input type="password"
+                                               class="form-control"
+                                               id="confPassword"
+                                               required
+                                               name="confPassword"
+                                               placeholder="*********"
+                                               data-ng-model="confPassword"
+                                               data-ng-change="checkPassword(newPassword, confPassword)">
+                                        <div class="input-group-addon">
+                                            <span class="text-success inline-block" ng-show="!invalidPassword">
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </span>
+                                            <span class="text-danger inline-block" ng-show="invalidPassword">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div data-ng-show="showResetPassword">
+                                    <div class="btn btn-warning btn-sm" data-ng-click="changePassword(oldPassword, newPassword, confPassword)">Change password</div>
+                                </div>
+                                </div>
                             <div class="col-md-6">
                                 <div class="form-group-sm">
                                     <label for="fname" class="control-label">Firstname</label>
@@ -169,7 +186,7 @@
                                 <br />
                                 <button class="btn btn-success btn-sm pull-right"
                                         type="submit"
-                                        data-ng-disabled="invalidLogin||invalidPassword||invalidEmail">
+                                        data-ng-disabled="invalidLogin||invalidEmail">
                                     Save
                                 </button>
                             </div>
