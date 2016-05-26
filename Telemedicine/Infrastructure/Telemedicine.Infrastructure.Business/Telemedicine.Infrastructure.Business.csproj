@@ -51,7 +51,6 @@
     <Compile Include="Services\DoctorService\DoctorService.cs" />
     <Compile Include="Services\HospitalService\HospitalService.cs" />
     <Compile Include="Services\PatientService\PatientService.cs" />
-    <Compile Include="Services\SecurityService\SecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\Telemedicine.Business.Interfaces\Telemedicine.Business.Interfaces.csproj">

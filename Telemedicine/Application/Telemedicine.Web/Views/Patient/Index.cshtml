@@ -10,6 +10,11 @@
             <div class="panel panel-default editable-panel">
                 <div class="panel-heading">
                     <h4 class="editable-title">Patient</h4>
+                    <h4 class="cursor-pointer editable-icon right-65" 
+                        data-ng-click="showPatientAnalyzes(patient.id)"
+                        title="Show analyzes">
+                        <span class="glyphicon glyphicon-stats"></span>
+                    </h4>
                     <h4 class="glyphicon glyphicon-pencil editable-icon"
                         data-ng-click="editPatient(patient)"
                         data-ng-class="{'glyphicon-remove':patient.isEditable}"
@@ -153,7 +158,8 @@
                 <div class="panel-body">
                     <form class="editable-form"
                           role="form"
-                          id="commentForm{{comment.id}}"
+                          id="{{formId}}"
+                          data-ng-init="formId = getUniqId();"
                           data-ng-repeat="comment in patient.comments"
                           data-ng-submit="updateComment(comment)"
                           data-ng-style="{'padding-bottom':comment.isEditable?'44px':'inital'}">
@@ -161,17 +167,15 @@
                             <div class="custom-editable-control">
                                 <div class="custom-editable-content">
                                     <textarea class="form-control" style="resize:vertical"
-                                              id="comment{{comment.id}}"
-                                              required
-                                              pattern="^\d{1,2}\.\d{1,2}\.\d{4}$"
+                                              id="comment_{{formId}}"
                                               data-ng-model="comment.commentText"
                                               data-ng-disabled="!comment.isEditable"
                                               placeholer="Message"></textarea>
                                 </div>
-                                <div class="custom-editable-side">
+                                <div class="btn btn-default custom-editable-side"
+                                     data-ng-click="editComment(comment)">
                                     <span class="glyphicon glyphicon-pencil side-icon"
                                           data-ng-class="{'glyphicon-remove':comment.isEditable}"
-                                          data-ng-click="editComment(comment)"
                                           title="{{comment.isEditable?'Cancel':'Edit'}}"></span>
                                 </div>
                             </div>
@@ -183,7 +187,8 @@
                                     style="margin-left:10px">
                                 {{comment.id?'Update':'Save'}}
                             </button>
-                            <button class="btn btn-danger btn-sm pull-right"
+                            <button type="button"
+                                    class="btn btn-danger btn-sm pull-right"
                                     data-ng-show="comment.isEditable&&comment.id"
                                     data-ng-click="removeComment(comment.id)">
                                 Remove

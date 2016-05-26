@@ -28,6 +28,8 @@ namespace Telemedicine.Infrastructure.Business.Services.PatientService
         {
             var model = _unitOfWork.Patients.Get(id);
             var entity = _patientMapper.Map<Comment>(comment);
+            var doctor = _unitOfWork.Doctors.Get(comment.Doctor.Id);
+            entity.Doctor = doctor;
             model.Comments.Add(entity);
             _unitOfWork.Save();
             return _patientMapper.Map<CommentDto>(entity);
@@ -51,7 +53,7 @@ namespace Telemedicine.Infrastructure.Business.Services.PatientService
 
         public IEnumerable<PatientDto> GetPatients(int? id)
         {
-            var ss  = _patientMapper.Map<IEnumerable<PatientDto>>(_unitOfWork.Patients.GetAll()
+            var ss = _patientMapper.Map<IEnumerable<PatientDto>>(_unitOfWork.Patients.GetAll()
                 .Where(x => id.HasValue ? x.Doctors.Any(z => z.Id == id.Value) : true));
             return ss;
         }

@@ -2,7 +2,7 @@
 
 namespace Telemedicine.Web.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class PatientController : Controller
     {
         // GET: Patient

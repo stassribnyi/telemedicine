@@ -87,24 +87,21 @@ namespace Telemedicine.Web.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[Authorize]
-        //public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
-        //    var result = await UserManager.ChangePasswordAsync(UserManager.FindByName(User.Identity.Name).Id, model.OldPassword, model.NewPassword);
-        //    switch (result.Succeeded)
-        //    {
-        //        case SignInStatus.Success:
-        //            return Json(new { success = true });
-        //        case SignInStatus.Failure:
-        //        default:
-        //            return Json(new { success = false, error = "Username or password is not valid" });
-        //    }
-        //}
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var result = await UserManager.ChangePasswordAsync(UserManager.FindByName(User.Identity.Name).Id, model.OldPassword, model.NewPassword);
+            if (result.Succeeded)
+            {
+                return Json(new { success = true });
+            }
+            return Json(new { success = false, error = "Username or password is not valid" });
+        }
 
         [HttpPost]
         [AllowAnonymous]

@@ -38,6 +38,13 @@ namespace Telemedicine.Security.Stores
 
         public async Task CreateAsync(ApplicationUser user)
         {
+            Hospital hospital = null;
+            if (user.Hospital != null)
+            {
+                hospital = _db.Hospitals.Find(user.Hospital.Id);
+                user.Hospital = null;
+            }
+            user.Hospital = hospital;
             _db.Users.Add(user);
             await _db.SaveChangesAsync();
         }

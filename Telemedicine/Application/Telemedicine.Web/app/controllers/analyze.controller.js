@@ -69,6 +69,10 @@
             );
         };
 
+        $scope.showPatient = function (id) {
+            window.location.href = '/Patient/?patientId=' + id;
+        };
+
         $scope.saveComment = function (comment) {
             Analyze.saveComment({ id: $scope.analyze.id }, comment, function (data) {
                 comment.id = data.id;
@@ -128,9 +132,8 @@
             }
         };
 
-        $scope.removeComment = function (id) {
+        $scope.removeComment = function (id, comments) {
             Comment.remove({ id: id }, function (data) {
-                var comments = $scope.analyze.comments;
                 removeElement(comments, findById(comments, id));
             });
         };

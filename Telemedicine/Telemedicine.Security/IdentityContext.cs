@@ -17,6 +17,8 @@ namespace Telemedicine.Security
             return new IdentityContext();
         }
 
+        public virtual IDbSet<Hospital> Hospitals { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ApplicationUserRole>()

@@ -55,7 +55,8 @@ namespace Telemedicine.Web.App_Start
 
             bundles.Add(new StyleBundle("~/bundles/css")
                 .Include("~/Content/site.css")
-                .Include("~/Content/bootstrap.css"));
+                .Include("~/Content/bootstrap.css")
+                .Include("~/Content/flatly.min.css"));
 
 #if DEBUG
             BundleTable.EnableOptimizations = false;

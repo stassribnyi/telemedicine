@@ -15,6 +15,10 @@
             register: {
                 method: 'POST',
                 url: '/account/register'
+            },
+            changePassword: {
+                method: 'POST',
+                url: '/account/changePassword'
             }
         });
     }

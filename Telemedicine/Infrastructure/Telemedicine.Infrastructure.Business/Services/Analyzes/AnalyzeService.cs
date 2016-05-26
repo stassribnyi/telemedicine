@@ -28,6 +28,8 @@ namespace Telemedicine.Infrastructure.Business.Services.Analyzes
         {
             var model = _unitOfWork.Analyzes.Get(id);
             var entity = _analyzeMapper.Map<Comment>(comment);
+            var doctor = _unitOfWork.Doctors.Get(comment.Doctor.Id);
+            entity.Doctor = doctor;
             model.Comments.Add(entity);
             _unitOfWork.Save();
             return _analyzeMapper.Map<CommentDto>(entity);
@@ -37,6 +39,8 @@ namespace Telemedicine.Infrastructure.Business.Services.Analyzes
         {
             var model = _unitOfWork.Analyzes.Get(id);
             var entity = _analyzeMapper.Map<Comment>(comment);
+            var doctor = _unitOfWork.Doctors.Get(comment.Doctor.Id);
+            entity.Doctor = doctor;
             model.ECG.Comments.Add(entity);
             _unitOfWork.Save();
             return _analyzeMapper.Map<CommentDto>(entity);

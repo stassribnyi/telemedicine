@@ -32,12 +32,13 @@
                 else {
                     $scope.patient.doctors.push(data);
                 }
-            });                     
+            });
         }
 
         $scope.addComment = function (patient) {
             patient.comments.push({
                 doctor: $scope.doctor,
+                commentText: '',
                 lastModified: new Date(),
                 isEditable: true
             }
@@ -130,6 +131,14 @@
                 comment.source = null;
             }
         };
+
+        $scope.showPatientAnalyzes = function (id) {
+            window.location.href = '/Patient/Analyze/?patientId=' + id;
+        };
+
+        $scope.getUniqId = function () {
+            return "id" + Math.random().toString(16).slice(2);
+        }
 
         //Helpers
 

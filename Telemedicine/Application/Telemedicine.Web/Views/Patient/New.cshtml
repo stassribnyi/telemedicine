@@ -138,7 +138,8 @@
                 <div class="panel-body">
                     <form class="editable-form"
                           role="form"
-                          id="commentForm{{comment.id}}"
+                          id="{{formId}}"
+                          data-ng-init="formId = getUniqId();"
                           data-ng-repeat="comment in patient.comments"
                           data-ng-submit="updateComment(comment)"
                           data-ng-style="{'padding-bottom':comment.isEditable?'44px':'inital'}">
@@ -146,15 +147,15 @@
                             <div class="custom-editable-control">
                                 <div class="custom-editable-content">
                                     <textarea class="form-control" style="resize:vertical"
-                                              id="comment{{comment.id}}"
+                                              id="comment_{{formId}}"
                                               data-ng-model="comment.commentText"
                                               data-ng-disabled="!comment.isEditable"
                                               placeholer="Message"></textarea>
                                 </div>
-                                <div class="custom-editable-side">
+                                <div class="btn btn-default custom-editable-side"
+                                          data-ng-click="editComment(comment)">
                                     <span class="glyphicon glyphicon-pencil side-icon"
                                           data-ng-class="{'glyphicon-remove':comment.isEditable}"
-                                          data-ng-click="editComment(comment)"
                                           title="{{comment.isEditable?'Cancel':'Edit'}}"></span>
                                 </div>
                             </div>

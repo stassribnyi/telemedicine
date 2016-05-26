@@ -8,9 +8,11 @@
     <div class="panel panel-default editable-panel" data-ng-show="analyzes">
         <div class="panel-heading min-height-60">
             <h4>
-                <span data-ng-bind="analyze.patient.lastName"></span>
-                <span data-ng-bind="analyze.patient.firstName"></span>
-                <span data-ng-bind="analyze.patient.patronimic"></span>
+                <span class="cursor-pointer" data-ng-click="showPatient(analyze.patient.id)">
+                    <span data-ng-bind="analyze.patient.lastName"></span>
+                    <span data-ng-bind="analyze.patient.firstName"></span>
+                    <span data-ng-bind="analyze.patient.patronimic"></span>
+                </span>
                 <span class="pull-right">
                     <span class="glyphicon glyphicon-sort-by-attributes margin-right-5 cursor-pointer"
                           title="{{isDesc? 'From newest to oldest': 'From oldest to newest'}}"
@@ -68,7 +70,7 @@
                                       id="commentForm{{comment.id}}"
                                       data-ng-repeat="comment in analyze.comments"
                                       data-ng-submit="updateComment(comment)"
-                                      data-ng-style="{'padding-bottom':comment.isEditable?'44px':'inital'}">                                  
+                                      data-ng-style="{'padding-bottom':comment.isEditable?'44px':'inital'}">
                                     <div class="form-group-sm">
                                         <div class="custom-editable-control">
                                             <div class="custom-editable-content">
@@ -79,10 +81,10 @@
                                                           placeholer="message"
                                                           title="Last modified: {{comment.lastModified | dateParse | date:'mediumDate'}} by {{comment.doctor.lastName + ' ' + comment.doctor.firstName}}"></textarea>
                                             </div>
-                                            <div class="custom-editable-side">
+                                            <div class="btn btn-default custom-editable-side"
+                                                 data-ng-click="editComment(comment)">
                                                 <span class="glyphicon glyphicon-pencil side-icon"
                                                       data-ng-class="{'glyphicon-remove':comment.isEditable}"
-                                                      data-ng-click="editComment(comment)"
                                                       title="{{comment.isEditable?'Cancel':'Edit'}}"></span>
                                             </div>
                                         </div>
@@ -94,9 +96,10 @@
                                                 style="margin-left:10px">
                                             {{comment.id?'Update':'Save'}}
                                         </button>
-                                        <button class="btn btn-danger btn-sm pull-right"
+                                        <button type="button"
+                                                class="btn btn-danger btn-sm pull-right"
                                                 data-ng-show="comment.isEditable&&comment.id"
-                                                data-ng-click="removeComment(comment.id)">
+                                                data-ng-click="removeComment(comment.id, analyze.comments)">
                                             Remove
                                         </button>
                                     </div>
@@ -138,10 +141,10 @@
                                                                   placeholer="Message"
                                                                   title="Last modified: {{comment.lastModified|dateParse | dateParse | date:'mediumDate'}}  by {{comment.doctor.lastName + ' ' + comment.doctor.firstName}}"></textarea>
                                                     </div>
-                                                    <div class="custom-editable-side">
+                                                    <div class="btn btn-default custom-editable-side"
+                                                         data-ng-click="editECGComment(comment)">
                                                         <span class="glyphicon glyphicon-pencil side-icon"
                                                               data-ng-class="{'glyphicon-remove':comment.isEditable}"
-                                                              data-ng-click="editECGComment(comment)"
                                                               title="{{comment.isEditable?'Cancel':'Edit'}}"></span>
                                                     </div>
                                                 </div>
@@ -153,9 +156,10 @@
                                                         style="margin-left:10px">
                                                     {{comment.id?'Update':'Save'}}
                                                 </button>
-                                                <button class="btn btn-danger btn-sm pull-right"
+                                                <button type="button"
+                                                        class="btn btn-danger btn-sm pull-right"
                                                         data-ng-show="comment.isEditable&&comment.id"
-                                                        data-ng-click="removeComment(comment.id)">
+                                                        data-ng-click="removeComment(comment.id, analyze.ecg.comments)">
                                                     Remove
                                                 </button>
                                             </div>
