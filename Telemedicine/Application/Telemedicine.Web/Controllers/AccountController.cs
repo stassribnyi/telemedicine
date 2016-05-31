@@ -82,7 +82,7 @@ namespace Telemedicine.Web.Controllers
 
         [Authorize]
         public ActionResult Cabinet(string returnUrl)
-        {
+        {            
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }

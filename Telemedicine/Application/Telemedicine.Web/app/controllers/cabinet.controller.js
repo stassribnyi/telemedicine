@@ -9,15 +9,18 @@
 
     function cabinet($scope, Doctor, Hospital, Account) {
         var original = {};
+       
         $scope.init = function () {
-            Doctor.getCurrent({}, function (data) {
-                $scope.doctor = data;
-                original = angular.copy($scope.doctor);
-            });
-
             Hospital.getHospitals({}, function (data) {
                 $scope.hospitals = data;
-            });
+                Doctor.getCurrent({}, function (doc) {
+                    doc.hospital = $scope.hospitals.filter(function (hosp) {
+                        return hosp.id == doc.hospital.id;
+                    })[0];
+                    $scope.doctor = doc;
+                    original = angular.copy($scope.doctor);
+                });
+            });           
         };
         $scope.checkLogin = function (login) {
             if (login.toLowerCase() !== original.login.toLowerCase()) {
@@ -47,16 +50,15 @@
                 confirmPassword: confPassword
             };
 
-            Account.changePassword({}, changePasswordObject, function (data) {
-                console.log(data);
-            });
+            Account.changePassword({}, changePasswordObject, function (data) {});
         };
 
-        $scope.editDoctor = function (doctor) {
-            console.log(doctor);
-            //Account.register({}, doctor, function (data) {
-            //    window.location.href = '/Account/Login';
-            //});
+        $scope.editDoctor = function (doctor) {            
+            Doctor.update({}, $scope.doctor, function (data) {
+                if (data.login != original.login) {
+                    window.location.href = '/Account/Logout';
+                }
+            });
         };
     }
 })();

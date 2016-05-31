@@ -72,7 +72,12 @@ namespace Telemedicine.Infrastructure.Business.Services.DoctorService
 
         public void UpdateDoctor(DoctorDto doctor)
         {
-            var model = _doctorMapper.Map<Doctor>(doctor);
+            var original = _unitOfWork.Doctors.Get(doctor.Id);
+            var forUpdate = _doctorMapper.Map<Doctor>(doctor);
+            var model = _doctorMapper.Map(forUpdate, original);
+            var hospital = _unitOfWork.Hospitals.Get(doctor.Hospital.Id);
+            model.Hospital = hospital;
+
             _unitOfWork.Doctors.Update(model);
             _unitOfWork.Save();
         }

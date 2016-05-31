@@ -127,6 +127,7 @@
                                                 required
                                                 id="hospital"
                                                 ng-model="doctor.hospital"
+                                                data-ng-init="doctor.hospital = findHospital(doctor.hospital.id)"
                                                 ng-options="g as g.hospitalName for g in hospitals">
                                             <option value="" disabled selected>Select a hospital</option>
                                         </select>
