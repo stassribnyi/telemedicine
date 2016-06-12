@@ -39,6 +39,13 @@ namespace Telemedicine.Infrastructure.Business.Common
                .ForMember(x => x.Patients, x => x.Ignore())
                ;
 
+            CreateMap<Patient, Patient>()
+              .ReverseMap()
+              .ForMember(x => x.Analyzes, x => x.Ignore())
+              .ForMember(x => x.Comments, x => x.Ignore())
+              .ForMember(x => x.Doctors, x => x.Ignore())
+              ;
+
             CreateMap<Hospital, HospitalDto>()
                 .ReverseMap()
                 ;

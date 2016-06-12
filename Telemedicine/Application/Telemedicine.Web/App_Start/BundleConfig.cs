@@ -54,6 +54,7 @@ namespace Telemedicine.Web.App_Start
                .IncludeDirectory("~/app/directives", "*.js"));
 
             bundles.Add(new StyleBundle("~/bundles/css")
+                .Include("~/Content/BloggerSans.css")
                 .Include("~/Content/site.css")
                 .Include("~/Content/bootstrap.css")
                 .Include("~/Content/flatly.min.css"));

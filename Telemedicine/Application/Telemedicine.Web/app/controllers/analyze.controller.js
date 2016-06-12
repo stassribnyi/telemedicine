@@ -12,6 +12,7 @@
 
         $scope.chartConfig = {
             options: {
+                colors: ['#058DC7'],
                 chart: {
                     zoomType: 'xy'
                 },
@@ -26,7 +27,7 @@
                     }
                 },
                 title: {
-                    text: 'Electrocardiogram'
+                    text: 'Electrocardiogram',
                 },
                 legend: {
                     enabled: false,
@@ -45,13 +46,11 @@
                 if (data.length > 0) {
                     $scope.analyzes = sortAnalyzes(data).reverse();
                     $scope.analyze = $scope.analyzes[$scope.analyzes.length - 1];
-                    $scope.chartConfig.subtitle = { text: $scope.analyze.patient.lastName + ' ' + $scope.analyze.patient.firstName + ' ' + $scope.analyze.patient.patronimic + ' from ' + moment($scope.analyze.lastMeasurement).format('MMMM Do YYYY, h:mm:ss a') }
-                    $scope.chartConfig.series = [{
-                        name: 'ECG',
-                        data: $scope.analyze.ecg.datas.map(function (element) {
-                            return [element.time, element.rr];
-                        }),
-                    }];
+                    $scope.chartConfig.subtitle = {
+                        text: $scope.analyze.patient.lastName + ' ' + $scope.analyze.patient.firstName + ' ' + $scope.analyze.patient.patronimic + ' from ' + moment($scope.analyze.lastMeasurement).format('MMMM Do YYYY, h:mm:ss a'),
+                        y: 25
+                    };
+                    $scope.chartConfig.series = $scope.chartConfig.series = getECGSeries($scope.analyze.ecg.datas);
                 }
             });
 
@@ -159,19 +158,22 @@
             $scope.isDesc = !$scope.isDesc;
             $scope.analyzes = $scope.isDesc ? sortAnalyzes($scope.analyzes) : sortAnalyzes($scope.analyzes).reverse();
             $scope.analyze = $scope.analyzes[$scope.analyzes.length - 1];
+            $scope.chartConfig.series = getECGSeries($scope.analyze.ecg.datas);
         };
 
         $scope.nextAnalyze = function () {
             var index = $scope.analyzes.indexOf($scope.analyze);
             if (index !== -1 && index < $scope.analyzes.length - 1) {
-                $scope.analyze = $scope.analyzes[index + 1]
+                $scope.analyze = $scope.analyzes[index + 1];
+                $scope.chartConfig.series = $scope.chartConfig.series = getECGSeries($scope.analyze.ecg.datas);
             }
         };
 
         $scope.prevAnalyze = function () {
             var index = $scope.analyzes.indexOf($scope.analyze);
             if (index > 0) {
-                $scope.analyze = $scope.analyzes[index - 1]
+                $scope.analyze = $scope.analyzes[index - 1];
+                $scope.chartConfig.series = $scope.chartConfig.series = getECGSeries($scope.analyze.ecg.datas);
             }
         };
 
@@ -202,6 +204,19 @@
             return array.sort(function (a, b) {
                 return new Date(b.lastMeasurement) - new Date(a.lastMeasurement);
             });
+        }
+
+        var getECGSeries = function (array) {
+            return [{
+                name: 'ECG',
+                marker: {
+                    symbol: 'circle',
+                    radius: 1
+                },
+                data: array.map(function (element) {
+                    return [element.time, element.rr];
+                }),
+            }];
         }
     }
 })();

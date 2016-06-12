@@ -203,6 +203,8 @@
     <Content Include="Content\flatly.min.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="Content\BloggerSans.css" />
+    <Content Include="fonts\BloggerSans.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -261,6 +263,11 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="fonts\Blogger Sans.otf" />
+    <Content Include="fonts\Blogger Sans.ttf" />
+    <Content Include="fonts\BloggerSans.eot" />
+    <Content Include="fonts\BloggerSans.ttf" />
+    <Content Include="fonts\BloggerSans.woff" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

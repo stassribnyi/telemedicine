@@ -67,7 +67,9 @@ namespace Telemedicine.Infrastructure.Business.Services.PatientService
         public void UpdatePatient(PatientDto patient)
         {
             var model = _patientMapper.Map<Patient>(patient);
-            _unitOfWork.Patients.Update(model);
+            var oldModel = _unitOfWork.Patients.Get(patient.Id);
+            var entity = _patientMapper.Map(model, oldModel);
+            _unitOfWork.Patients.Update(entity);
             _unitOfWork.Save();
         }
     }
