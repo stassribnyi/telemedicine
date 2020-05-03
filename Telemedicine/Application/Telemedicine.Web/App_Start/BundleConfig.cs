@@ -50,14 +50,11 @@ namespace Telemedicine.Web.App_Start
             bundles.Add(new ScriptBundle("~/bundles/filters")
                .IncludeDirectory("~/app/filters", "*.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/directives")
-               .IncludeDirectory("~/app/directives", "*.js"));
-
             bundles.Add(new StyleBundle("~/bundles/css")
                 .Include("~/Content/BloggerSans.css")
                 .Include("~/Content/site.css")
                 .Include("~/Content/bootstrap.css")
-                .Include("~/Content/flatly.min.css"));
+                .Include("~/Content/cerulean.min.css"));
 
 #if DEBUG
             BundleTable.EnableOptimizations = false;

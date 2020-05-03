@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -193,14 +194,13 @@
     <Content Include="app\factories\comment.factory.js" />
     <Content Include="app\factories\patient.factory.js" />
     <Content Include="app\filters\date.filter.js" />
-    <Content Include="app\filters\duplicateRequests.filter.js" />
     <Content Include="app\filters\start.filter.js" />
     <Content Include="app\templates\editable-textarea.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\flatly.min.css" />
+    <Content Include="Content\cerulean.min.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Content\BloggerSans.css" />
@@ -1072,8 +1072,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\directives\" />
-    <Folder Include="app\services\" />
     <Folder Include="App_Data\" />
     <Folder Include="Attributes\" />
   </ItemGroup>

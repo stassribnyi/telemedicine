@@ -17,7 +17,6 @@
         $scope.isPatientFormEditable = false;
         $scope.format = 'dd.MM.yyyy';
         $scope.dateOptions = {
-            //dateDisabled: disabled,
             formatYear: 'yy',
             startingDay: 1
         }
