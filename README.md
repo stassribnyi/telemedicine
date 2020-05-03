@@ -1,11 +1,11 @@
-# Telemedicine Project
+# Telemedicine Project <!-- TOC ignore:true -->
 
-- **NOTE:** _This app was created as part of my diploma project and is provided as is._
+> **_NOTE:_** This app was created as part of my diploma project and is provided as is.
 
-# Table of Contents
+## Table of Contents <!-- TOC ignore:true -->
 
 - [Telemedicine Project](#telemedicine-project)
-- [Table of Contents](#table-of-contents)
+  - [Table of Contents <!-- TOC ignore:true -->](#table-of-contents)
   - [Goal](#goal)
   - [Tech stack](#tech-stack)
   - [Software](#software)
