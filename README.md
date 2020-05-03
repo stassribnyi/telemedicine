@@ -11,6 +11,7 @@
   - [Software](#software)
   - [App Modules](#app-modules)
   - [Getting started](#getting-started)
+  - [Screenshots](#screenshots)
 
 ## Goal
 
@@ -70,3 +71,23 @@ git clone https://github.com/stassribnyi/telemedicine.git
 - Clean and Rebuild
 - Start IIS Express
 - Login Credentials (**login:** igor.alexandrov, **password:** Password123)
+
+## Screenshots
+
+- Login
+  ![Login](https://gist.githubusercontent.com/stassribnyi/d944cd80cc2035f6c8ef7216b92488c1/raw/e39b822c5ebeba04c25d03e71da72720dc6ae768/login.png)
+
+- Register
+  ![Register](https://gist.githubusercontent.com/stassribnyi/d944cd80cc2035f6c8ef7216b92488c1/raw/e39b822c5ebeba04c25d03e71da72720dc6ae768/register.png)
+
+- Register with errors (**login** and **email** cross means that field value has been taken by someone)
+  ![Register with errors](https://gist.githubusercontent.com/stassribnyi/d944cd80cc2035f6c8ef7216b92488c1/raw/e39b822c5ebeba04c25d03e71da72720dc6ae768/register%2520with%2520errors.png)
+
+- Patients list (list of patients assigned to authorized doctor, **"View information"** and **"View analyzes"** icons are clickable)
+  ![Patients list](https://gist.githubusercontent.com/stassribnyi/d944cd80cc2035f6c8ef7216b92488c1/raw/e39b822c5ebeba04c25d03e71da72720dc6ae768/patients.png)
+
+- Patient creation (**Device Id** is an identifier of the telemedical device assigned to patient, for ex: smart watch, data from which will be associated with particular patient)
+  ![Patient creation](https://gist.githubusercontent.com/stassribnyi/d944cd80cc2035f6c8ef7216b92488c1/raw/e39b822c5ebeba04c25d03e71da72720dc6ae768/create%2520new%2520patient.png)
+
+- Patient analyzes (Here is described data from the telemedical device for a specific date. Here are two types of comments, one is for whole data and second is just for ECG)
+  ![Patient analyzes](https://gist.githubusercontent.com/stassribnyi/d944cd80cc2035f6c8ef7216b92488c1/raw/e39b822c5ebeba04c25d03e71da72720dc6ae768/analyzes.png)
